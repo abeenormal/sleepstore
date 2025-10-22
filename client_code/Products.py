@@ -24,4 +24,6 @@ class Products(ProductsTemplate):
     
   def button_click(self,  **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call(add_item_to_session_cart_items)
+    cart= anvil.server.call(add_to_cart):
+    
+    
