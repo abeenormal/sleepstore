@@ -11,7 +11,20 @@ import anvil.server
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
 
+@anvil.server.callable
+def add_to_cart(id_name,description,image, price, cart_id):
+  cart =  anvil.server.session.get('shopping_cart', {})
+  cart[id_name]= cart.get(id_name, 0)
+  anvil.server.session['cart_items']= cart
+  
 
+@anvil.server.callable
+def get_cart_items():
+  return anvil.server.session.get('shopping_cart', {})
 
-
+def remove_from_cart(id_name):
+  cart= anvil.server.session.get('shopping-cart, {}')
+  if id_name in cart:
+    del cart[id_name]
+  anvil.server.session['shopping_cart'] = cart
 
