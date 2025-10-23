@@ -11,6 +11,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
+
 class Products(ProductsTemplate):
   def __init__(self,id_name,button_text, description,image, **properties):
     # Set Form properties and Data Bindings.
@@ -24,6 +25,13 @@ class Products(ProductsTemplate):
     
   def button_click(self,  **event_args):
     """This method is called when the button is clicked"""
-    cart= anvil.server.call(add_to_cart):
+    id_name
+    self.content_panel.visible= False
+    open_form(self.form2)
+ 
+
+  def checkout_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.remove_from_parent()
     
     
