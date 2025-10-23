@@ -12,8 +12,12 @@ from anvil.tables import app_tables
 
 
 class Cart(CartTemplate):
-  def __init__(self, **properties):
+  def __init__(self,id_name,button_text, description,image, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.name_label.content = self.item_name
+    self.item_description_label.content = self.item_description
+    self.item_image_content.source = self.item_image
+    self.button2.text = button_text
 
     # Any code you write here will run before the form opens.
