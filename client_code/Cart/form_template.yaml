@@ -1,0 +1,7 @@
+components:
+- layout_properties: {grid_position: 'UBPWAJ,XSQCBE'}
+  name: repeating_panel_1
+  properties: {item_template: Cart.ItemTemplate1}
+  type: RepeatingPanel
+container: {type: ColumnPanel}
+is_package: true

@@ -23,37 +23,6 @@ components:
   name: content_panel
   properties: {background: 'theme:Primary Container', border: '10px solid ', foreground: 'theme:Primary', role: elevated-card}
   type: ColumnPanel
-- components:
-  - components:
-    - layout_properties: {grid_position: 'QAZJRP,FOVZHU'}
-      name: name_label2
-      properties: {align: center, content: name, font_size: 20}
-      type: RichText
-    - layout_properties: {grid_position: 'IUWEJT,MEFFCC'}
-      name: image_content2
-      properties: {}
-      type: Image
-    - layout_properties: {grid_position: 'DUAUEK,HJXUCG'}
-      name: description_label2
-      properties: {align: center, content: ''}
-      type: RichText
-    - layout_properties: {grid_position: 'AOMXCJ,NNZZMH'}
-      name: button2
-      properties: {role: outlined-button, text: price}
-      type: Button
-    layout_properties: {grid_position: 'NHBLKM,WBUSHV'}
-    name: form2
-    properties: {role: elevated-card}
-    type: ColumnPanel
-  - event_bindings: {click: checkout_button_click}
-    layout_properties: {grid_position: 'YPXKJG,EYKZRK'}
-    name: checkout_button
-    properties: {background: 'theme:Primary Container', bold: true, font_size: null, role: tonal-button, text: Buy Now!, visible: true}
-    type: Button
-  layout_properties: {grid_position: 'APNJWM,CGTMUH'}
-  name: content_panel2
-  properties: {role: tonal-card, visible: true}
-  type: ColumnPanel
 container:
   properties: {role: null}
   type: ColumnPanel
