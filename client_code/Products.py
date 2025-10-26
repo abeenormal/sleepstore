@@ -14,7 +14,7 @@ from anvil.tables import app_tables
 
 
 class Products(ProductsTemplate):
-  def __init__(self,id_name,button_text, description,image,quantity, **properties):
+  def __init__(self,id_name,button_text, description,image,quantity,back_button_callback=back_button_callback, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)    
     self.name_label.content = id_name
@@ -25,9 +25,11 @@ class Products(ProductsTemplate):
     # Any code you write here will run before the form opens.
   
     
-  def button_click(self,  **event_args):
-    """This method is called when the button is clicked"""
-    self.content_panel.clear()
-    self.content_panel.render_cart()
+  def button_click(self, **event_args):
+    anvil.server.call("add_to_cart", {})
 
-  
+  def back_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+  def render_products(self, products_panel):
+    self.content_panel.clear()
+    self.content_panel.add_component(Home())

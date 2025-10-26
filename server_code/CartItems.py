@@ -7,25 +7,25 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
-from .ShoppingCart import Products, CartItem
+from .ShoppingCart import Product, CartItem
 
 
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's brows
 @anvil.server.callable
-def add_to_cart(id_name, quantity):
+def add_to_cart(name, quantity):
     cart = anvil.server.session.get("cart", {})
 
-    if id_name not in Products:
-      raise ValueError("Invalid id_name")
+    if name not in Product:
+      raise ValueError("Invalid name")
 
-      product = Products[id_name]
+      product = Product[name]
 
-      if id_name in cart:
-        cart[id_name].quantity += quantity
+      if name in cart:
+        cart[name].quantity += quantity
       else:
-        cart[id_name] = CartItem(product, quantity)
+        cart[name] = CartItem(product, quantity)
 
     anvil.server.session["cart"] = cart
   

@@ -28,6 +28,7 @@ unique_ids:
     OurProducts: '1759275156092117565177494.96732'
     Products: '1759273317134883366655857.0757'
   modules:
+    Base.ShoppingCart: '1761505405954850526064477.4191'
     Base.urls: '1759425098716333032506142.48016'
   scripts: {}
   server_modules:
