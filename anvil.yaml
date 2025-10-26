@@ -3,28 +3,11 @@ db_schema:
   cartitems:
     client: none
     columns:
-    - admin_ui: {order: 2, width: 200}
-      name: id_name
-      target: products
-      type: link_single
-    - admin_ui: {order: 3, width: 200}
-      name: description
-      target: products
-      type: link_single
-    - admin_ui: {order: 4, width: 200}
-      name: image
-      target: products
-      type: link_single
-    - admin_ui: {order: 5, width: 200}
-      name: price
-      target: products
-      type: link_single
     - admin_ui: {width: 200}
-      name: email
-      target: users
-      type: link_single
-    - admin_ui: {order: 0, width: 200}
-      name: cart_id
+      name: id_name
+      type: simpleObject
+    - admin_ui: {width: 200}
+      name: quantity
       type: number
     server: full
     title: CartItems
@@ -60,6 +43,9 @@ db_schema:
     - admin_ui: {order: 1.125, width: 200}
       name: created
       type: datetime
+    - admin_ui: {order: 6, width: 200}
+      name: quantity
+      type: number
     server: full
     title: Products
   shopping_cart:
@@ -71,10 +57,6 @@ db_schema:
     - admin_ui: {order: 3, width: 200}
       name: status
       type: simpleObject
-    - admin_ui: {width: 200}
-      name: cart_id
-      target: cartitems
-      type: link_single
     server: full
     title: Shopping_cart
   users:

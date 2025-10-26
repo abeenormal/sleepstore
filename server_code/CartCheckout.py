@@ -12,9 +12,7 @@ import anvil.server
 # rather than in the user's browser.
 
 
-@anvil.server.callable
-def clear_cart():
-  anvil.sever.session['cart'] = {}
+
 
 @anvil.server.callable
 def process_order(transaction_details):
