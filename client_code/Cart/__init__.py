@@ -25,3 +25,8 @@ class CartItem(CartTemplate):
      
 
     # Any code you write here will run before the form opens.
+  def refresh_cart(self):
+    """Calls the server to get and display the cart contents."""
+    cart_items = anvil.server.call("get_cart_items")
+    self.cart_repeating_panel.items = cart_items
+    self.total_label.text = f"Total: ${anvil.server.call('get_cart_total'):.2f}"

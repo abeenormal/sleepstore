@@ -10,6 +10,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Products import Products
+from ..Cart import Cart
 
 
 
@@ -24,10 +25,14 @@ class OurProducts(OurProductsTemplate):
 
     # Any code you write here will run before the form opens. 
    
+  
   def back(self):
     self.content_panel.clear()
-    self.content_panel.refresh
-  
+    self.load_products() 
+
+  def render_cart(self, id_name):
+    self.content_panel.clear()
+    self.content_panel.add_component(Cart(id_name, self.back))
   
     
 
