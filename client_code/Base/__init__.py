@@ -14,6 +14,7 @@ from ..About import About
 from ..MyPurchases import MyPurchases
 from .urls import urls
 from ..Footer import Footer
+from ..Cart import Cart
 
 
 class Base(BaseTemplate):
@@ -87,4 +88,4 @@ class Base(BaseTemplate):
   def cart_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(Cart())
+    self.content_panel.add_component(Cart('id_name','description', 'image', 'button_text', 'quantity',))

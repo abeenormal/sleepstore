@@ -22,5 +22,5 @@ class CartItems(CartItemsTemplate):
 
   def remove_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.parent.raise_event('x-remove-item', item_to_remove=self.item)
+    anvil.server.call('remove_from_cart')
 
