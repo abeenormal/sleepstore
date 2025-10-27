@@ -1,4 +1,4 @@
-from ._anvil_designer import ItemTemplate1Template
+from ._anvil_designer import CartItemsTemplate
 from anvil import *
 import anvil.server
 import stripe.checkout
@@ -11,22 +11,16 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class ItemTemplate1(ItemTemplate1Template):
+class CartItems(CartItemsTemplate):
   def __init__(self, **properties):
+    super().__init__(**properties)
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.name_label.content = id_name
-    self.item_description_label.content = description
-    self.item_image_content.source = image
-    self.button2.text = button_text
-    self.quantity.label = quantity
-
+  
     # Any code you write here will run before the form opens.
 
   def remove_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    self.parent.raise_event('x-remove-item', item_to_remove=self.item)
 
-  def button2_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
+

@@ -6,8 +6,8 @@ db_schema:
     - admin_ui: {width: 200}
       name: id_name
       type: simpleObject
-    - admin_ui: {width: 200}
-      name: quantity
+    - admin_ui: {order: 2, width: 200}
+      name: item_quantity
       type: number
     server: full
     title: CartItems

@@ -11,17 +11,18 @@ import anvil.server
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
 class Product:
-  def __init__(self, product_id,name,description,image, price):
+  def __init__(self, product_id,name,description,image, price,quantity):
     self.product_id = product_id
     self.name = name
     self.description = description
     self.image = image
     self.price = price
+    self.quantity = quantity
 
 class CartItem:
-  def __init__(self, product, quantity):
+  def __init__(self, product, item_quantity):
     self.product = product
-    self.quantity = quantity
+    self.item_quantity = item_quantity
 
   
 
