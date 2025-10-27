@@ -10,7 +10,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Products import Products
-from ..Checkout import Checkout
+from ..Cart import Cart
 
 
 class OurProducts(OurProductsTemplate):
@@ -27,9 +27,9 @@ class OurProducts(OurProductsTemplate):
     self.content_panel.clear()
     self.load_products() 
 
-  def render_checkout(self, id_name):
+  def render_cart(self, id_name,back):
     self.content_panel.clear()
-    self.content_panel.add_component(Checkout(id_name,self.back))
+    self.content_panel.add_component(Cart(id_name,self.back))
   
     
 
@@ -38,7 +38,7 @@ class OurProducts(OurProductsTemplate):
     products_panel = GridPanel()
 
     for i, product in enumerate(products):
-      c = Products(id_name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"],image=product["image"],quantity=product["quantity"], button_callback=self.render_checkout)
+      c = Products(id_name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"],image=product["image"],quantity=product["quantity"], button_callback=self.render_cart)
       products_panel.add_component(c, row=str(i//3), width_xs=4)
       
     self.content_panel.add_component(products_panel)

@@ -11,10 +11,11 @@ from ..Home import Home
 from ..OurProducts import OurProducts
 from ..MyPurchases import MyPurchases
 from ..About import About
+from ..Cart import Cart
 
 # This is a module.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
 
-urls = {"home": Home, "ourproducts": OurProducts, "my-purchases": MyPurchases, "about": About}
+urls = {"home": Home, "ourproducts": OurProducts, "my-purchases": MyPurchases, "about": About, "cart": Cart, }
 
 

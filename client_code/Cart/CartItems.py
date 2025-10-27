@@ -19,8 +19,8 @@ class CartItems(CartItemsTemplate):
   
     # Any code you write here will run before the form opens.
 
+
   def remove_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.parent.raise_event('x-remove-item', item_to_remove=self.item)
-
 

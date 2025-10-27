@@ -1,5 +1,10 @@
 components:
 - components:
+  - event_bindings: {click: cart_click}
+    layout_properties: {}
+    name: cart
+    properties: {bold: true, font_size: 20, foreground: 'theme:Primary', text: Cart}
+    type: Link
   - event_bindings: {click: about_us_click}
     layout_properties: {}
     name: about_us

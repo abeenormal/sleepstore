@@ -9,12 +9,14 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .Cart.CartItems import CartItemsTemplate
 
 
 
 
 class Products(ProductsTemplate):
   def __init__(self,id_name,button_text, description,image,quantity,button_callback, **properties):
+    
     # Set Form properties and Data Bindings.
     self.init_components(**properties)    
     self.name_label.content = id_name
@@ -28,7 +30,13 @@ class Products(ProductsTemplate):
   
     
   def button_click(self, **event_args):
-    anvil.server.call('add_to_cart', {})
+    anvil.server.call("get_cart_items")
+    self.content_panel.clear()
+    self.add_component(CartItemsTemplate())
+   
+   
+    
+ 
 
 
   def back_button_click(self, **event_args):

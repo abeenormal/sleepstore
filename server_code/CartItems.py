@@ -14,20 +14,11 @@ from .ShoppingCart import Product, CartItem
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's brows
 @anvil.server.callable
-def add_to_cart():
-    cart = anvil.server.session.get("cart", {})
-    id_name = Product['id_name']
-    quantity = Product['quantity']
-
-    if id_name not in Product:
-      raise ValueError("Invalid name")
-
+def add_to_cart(product):
+    cart = anvil.server.session.get('cart', {})
+    if product not in cart:
       
-
-    if id_name in cart:
-        cart[id_name].quantity += quantity
-    else:
-        cart[id_name] = CartItem(id_name,quantity)
+     cart[product] = Product("id_name",'name','description','image','price')  
 
     anvil.server.session["cart"] = cart
   
@@ -41,7 +32,7 @@ def get_cart_items():
       'description': item.product.description,
       'image': item.product.image,
       'price': item.product.price,
-      'quantity':item.product.quantity,
+      'name' : item.product.name,
       'total': item.total
     }
     for item in cart.values()
@@ -56,8 +47,8 @@ def remove_from_cart(id_name):
 
 @anvil.server.callable
 def get_cart_total():
-  cart= anvil.server.session.get("cart", {})
-  total = sum(item.product.price * item.product.quantity for item in cart.values())
+  CartItems = anvil.server.session.get("cart", {})
+  total = sum (CartItems("price"))
   return total
 
 @anvil.server.callable
