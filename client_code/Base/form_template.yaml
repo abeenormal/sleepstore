@@ -1,9 +1,14 @@
 components:
 - components:
+  - event_bindings: {click: OurProducts_click}
+    layout_properties: {}
+    name: OurProducts
+    properties: {bold: true, font_size: 20, foreground: 'theme:Primary', italic: true, role: null, text: Shop}
+    type: Link
   - event_bindings: {click: cart_click}
     layout_properties: {}
     name: cart
-    properties: {bold: true, font_size: 20, foreground: 'theme:Primary', text: Cart}
+    properties: {bold: true, font_size: 20, foreground: 'theme:Primary', italic: true, text: Cart}
     type: Link
   - event_bindings: {click: about_us_click}
     layout_properties: {}
