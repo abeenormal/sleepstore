@@ -3,9 +3,6 @@ db_schema:
   cartitems:
     client: none
     columns:
-    - admin_ui: {width: 200}
-      name: id_name
-      type: simpleObject
     - admin_ui: {order: 2, width: 200}
       name: item_quantity
       type: number
@@ -21,6 +18,9 @@ db_schema:
     - admin_ui: {order: 6, width: 200}
       name: item_name
       type: simpleObject
+    - admin_ui: {order: 1, width: 200}
+      name: id_name
+      type: string
     server: full
     title: CartItems
   orders:
