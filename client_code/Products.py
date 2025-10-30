@@ -23,4 +23,3 @@ class Products(ProductsTemplate):
     save_clicked = alert(content=AddToCart(item=self.item),large=True)
 
     
-  

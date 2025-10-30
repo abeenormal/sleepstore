@@ -21,9 +21,11 @@ class OurProducts(OurProductsTemplate):
      self.load_products()
 
     # Any code you write here will run before the form opens. 
+    get_all_products():
   products = app_tables.products.search()
+  products_panel = GridPanel()
   for p in products:
-     self.flow_panel_1.add_component(Products(item=p), width='30%')
+     products_panel.add_component(Products(item=p), width='30%')
   
  
 
