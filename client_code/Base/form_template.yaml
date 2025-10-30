@@ -1,5 +1,20 @@
 components:
 - components:
+  - event_bindings: {click: my_purchases_click}
+    layout_properties: {}
+    name: my_purchases
+    properties: {bold: true, font_size: 20, foreground: 'theme:Primary', icon: 'fa:fast-forward', italic: true, text: My Purchases, visible: false}
+    type: Link
+  - components: []
+    layout_properties: {}
+    name: contact
+    properties: {bold: true, font_size: 20, foreground: 'theme:Primary', italic: true, text: Contact Us}
+    type: Link
+  - event_bindings: {click: about_us_click}
+    layout_properties: {}
+    name: about_us
+    properties: {align: left, bold: true, font: '', font_size: 20, foreground: 'theme:Primary', italic: true, role: null, text: About Us}
+    type: Link
   - event_bindings: {click: OurProducts_click}
     layout_properties: {}
     name: OurProducts
@@ -9,16 +24,6 @@ components:
     layout_properties: {}
     name: cart
     properties: {bold: true, font_size: 20, foreground: 'theme:Primary', italic: true, text: Cart}
-    type: Link
-  - event_bindings: {click: about_us_click}
-    layout_properties: {}
-    name: about_us
-    properties: {align: left, bold: true, font: '', font_size: 20, foreground: 'theme:Primary', italic: true, role: null, text: About Us}
-    type: Link
-  - event_bindings: {click: my_purchases_click}
-    layout_properties: {}
-    name: my_purchases
-    properties: {bold: true, font_size: 20, foreground: 'theme:Primary', icon: 'fa:fast-forward', italic: true, text: My Purchases, visible: false}
     type: Link
   - event_bindings: {click: sign_in_click}
     layout_properties: {}

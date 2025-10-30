@@ -95,3 +95,38 @@ class Base(BaseTemplate):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(OurProducts())
+    
+  def add_to_cart(self, product, quantity):
+    #if item is already in cart, just update the quantity
+    for i in self.cart_items:
+      if i['product'] == product:
+        i['quantity'] += quantity
+        break
+    else:
+      self.cart_items.append({'product': product, 'quantity': quantity})
+# added from shop template)
+
+
+
+
+
+
+
+  
+
+def contact_link_click(self, **event_args):
+  """This method is called when the Link is shown on the screen"""
+  self.navigate(self.contact_link, Contact())
+
+  def cart_link_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.navigate(self.cart_link, Cart(items=self.cart_items))
+
+def subscribe_button_click(self, **event_args):
+  """This method is called when the button is clicked"""
+  email = self.subscribe_textbox.text
+  if email:
+    anvil.server.call('add_subscriber', email)
+    self.subscribe_textbox.text = None
+    Notification("Thanks for subscribing!").show()
+
