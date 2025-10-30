@@ -11,36 +11,16 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from .Cart.CartItems import CartItemsTemplate
 
-
-
-
 class Products(ProductsTemplate):
-  def __init__(self,id_name,button_text, description,image,quantity,button_callback, **properties):
-    
+    def __init__(self, **properties):
     # Set Form properties and Data Bindings.
-    self.init_components(**properties)    
-    self.name_label.content = id_name
-    self.description_label.content = description
-    self.image_content.source = image
-    self.button.text = button_text
-    self.button_callback = self.button_callback
+     self.init_components(**properties)
 
+    # Any code you write here will run when the form opens.
 
-    # Any code you write here will run before the form opens.
-  
-    
-  def button_click(self, **event_args):
-    anvil.server.call("get_cart_items")
-    self.content_panel.clear()
-    self.add_component(CartItemsTemplate())
-   
-   
-    
- 
+    def add_button_click(self, **event_args):
+     """This method is called when the button is clicked"""
+    save_clicked = alert(content=AddToCart(item=self.item),large=True)
 
-
-  def back_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.button_callback(self.name_label.content.lower())
     
   
