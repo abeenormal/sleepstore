@@ -25,6 +25,7 @@ class Base(BaseTemplate):
     self.init_components(**properties)
     self.change_sign_in_text()
     self.handle_urls()
+    self.cart_items = []
     
 
     # Any code you write here will run before the form opens.
