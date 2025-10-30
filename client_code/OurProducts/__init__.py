@@ -18,7 +18,7 @@ class OurProducts(OurProductsTemplate):
         
     # Set Form properties and Data Bindings.
      self.init_components(**properties)
-     self.load_products()
+
 
     # Any code you write here will run before the form opens. 
     get_all_products():
@@ -29,10 +29,7 @@ class OurProducts(OurProductsTemplate):
   
  
 
-  def load_products(self,):
-    products = anvil.server.call("get_all_products").search()
-    products_panel = GridPanel()
-
+ 
     for i, product in enumerate(products):
       c = Products(id_name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"],image=product["image"],quantity=product["quantity"], button_callback=self.render_cart)
       products_panel.add_component(c, row=str(i//3), width_xs=4)

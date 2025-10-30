@@ -19,10 +19,11 @@ components:
       name: description_label
       properties: {align: center, content: ''}
       type: RichText
-    - layout_properties: {grid_position: 'AYBAOE,GUWSEZ'}
-      name: item_quantity_label
-      properties: {align: center, content: ''}
-      type: RichText
+    - event_bindings: {pressed_enter: quantity_box_pressed_enter}
+      layout_properties: {grid_position: 'OEGYVC,JEIPGL'}
+      name: quantity_box
+      properties: {type: number}
+      type: TextBox
     - event_bindings: {click: remove_click}
       layout_properties: {grid_position: 'PMGFWI,FNKEGF'}
       name: remove

@@ -12,16 +12,13 @@ from anvil.tables import app_tables
 
 
 class Cart(CartTemplate):
-  def __init__(self,id_name,description,image,button_text,quantity, **properties):
+  def __init__(self, **properties):
     # Set Form properties and Data Bindings.
-    self.init_components(**properties)   
-    self.name_label.content = id_name
-    self.item_description_label.content = description
-    self.item_image_content.source = image
-    self.button2.text = button_text
-    self.quantity.label = quantity
-     
-
+    self.init_components(**properties)
+    self.order = []
+    self.items = items
+   
+  self.cart.repeating_panel
     # Any code you write here will run before the form opens.
   def refresh_cart(self):
     """Calls the server to get and display the cart contents."""

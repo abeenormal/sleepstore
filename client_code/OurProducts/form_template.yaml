@@ -1,5 +1,10 @@
 components:
-- layout_properties: {grid_position: 'ROJIQV,QSVOZE'}
+- components:
+  - layout_properties: {grid_position: 'ETZTWF,RTHVBD'}
+    name: products_1
+    properties: {}
+    type: form:Products
+  layout_properties: {grid_position: 'ROJIQV,QSVOZE'}
   name: content_panel
   properties: {}
   type: ColumnPanel

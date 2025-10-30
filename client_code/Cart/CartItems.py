@@ -24,3 +24,7 @@ class CartItems(CartItemsTemplate):
     """This method is called when the button is clicked"""
     anvil.server.call('remove_from_cart')
 
+  def quantity_box_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
+
