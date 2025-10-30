@@ -21,17 +21,11 @@ class OurProducts(OurProductsTemplate):
      self.load_products()
 
     # Any code you write here will run before the form opens. 
-   
+  products = app_tables.products.search()
+  for p in products:
+     self.flow_panel_1.add_component(Products(item=p), width='30%')
   
-  def back(self):
-    self.content_panel.clear()
-    self.load_products() 
-
-  def render_cart(self, id_name,back):
-    self.content_panel.clear()
-    self.content_panel.add_component(Cart(id_name,self.back))
-  
-    
+ 
 
   def load_products(self,):
     products = anvil.server.call("get_all_products").search()
