@@ -21,18 +21,18 @@ class OurProducts(OurProductsTemplate):
 
 
     # Any code you write here will run before the form opens. 
-    get_all_products():
-  products = app_tables.products.search()
-  products_panel = GridPanel()
-  for p in products:
-     products_panel.add_component(Products(item=p), width='30%')
+
+     products = app_tables.products.search()
+     products_panel = GridPanel()
+     for p in products:
+      products_panel.add_component(Products(item=p), width='30%')
   
  
 
  
-    for i, product in enumerate(products):
-      c = Products(id_name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"],image=product["image"],quantity=product["quantity"], button_callback=self.render_cart)
-      products_panel.add_component(c, row=str(i//3), width_xs=4)
+  for i, product in enumerate(products):
+    c = Products(id_name=product["name"], button_text=f"Purchase for ${product['price']}", description=product["description"],image=product["image"],quantity=product["quantity"], button_callback=self.render_cart)
+    products_panel.add_component(c, row=str(i//3), width_xs=4)
       
     self.content_panel.add_component(products_panel)
 
