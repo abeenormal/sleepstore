@@ -97,15 +97,7 @@ class Base(BaseTemplate):
     self.content_panel.clear()
     self.content_panel.add_component(OurProducts())
     
-  def add_to_cart(self, product, quantity):
-    #if item is already in cart, just update the quantity
-    for i in self.cart_items:
-      if i['product'] == product:
-        i['quantity'] += quantity
-        break
-    else:
-      self.cart_items.append({'product': product, 'quantity': quantity})
-# added from shop template)
+  
 
 
 

@@ -18,7 +18,7 @@ class Cart(CartTemplate):
     self.order = []
     self.items = items
    
-    self.cart.repeating_panel
+    self.cart.repeating_panel.items = self.items
     # Any code you write here will run before the form opens.
   def refresh_cart(self):
     """Calls the server to get and display the cart contents."""
