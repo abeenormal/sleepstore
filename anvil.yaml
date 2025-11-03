@@ -32,7 +32,7 @@ db_schema:
     server: full
     title: orders
   products:
-    client: none
+    client: search
     columns:
     - admin_ui: {order: 0, width: 200}
       name: id_name
@@ -46,15 +46,6 @@ db_schema:
     - admin_ui: {order: 1.5, width: 200}
       name: image
       type: media
-    - admin_ui: {order: 5, width: 200}
-      name: name
-      type: string
-    - admin_ui: {order: 1.125, width: 200}
-      name: created
-      type: datetime
-    - admin_ui: {order: 6, width: 200}
-      name: quantity
-      type: number
     server: full
     title: Products
   shopping_cart:

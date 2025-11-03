@@ -1,4 +1,20 @@
 components:
+- layout_properties: {grid_position: 'GILIAI,ZKVDYM'}
+  name: spacer_2
+  properties: {height: 32}
+  type: Spacer
+- layout_properties: {grid_position: 'RECFVP,NQMFGR'}
+  name: empty_cart_label
+  properties: {align: center, font_size: 20, text: You don't have any items in your cart yet.}
+  type: Label
+- layout_properties: {grid_position: 'BWYCEC,VVNLNN'}
+  name: spacer_1
+  properties: {height: 81}
+  type: Spacer
+- layout_properties: {grid_position: 'XCZUWC,HRJRHY'}
+  name: label_1
+  properties: {align: left, bold: true, font_size: 24, italic: true, text: My Cart}
+  type: Label
 - layout_properties: {grid_position: 'UBPWAJ,XSQCBE'}
   name: cart_repeating_panel
   properties: {item_template: Cart.CartItems, role: elevated-card}

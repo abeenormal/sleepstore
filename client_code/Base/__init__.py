@@ -54,6 +54,12 @@ class Base(BaseTemplate):
   def toggle_my_purchases_link(self):
     self.my_purchases.visible = anvil.users.get_user() is not None
 
+  def add_to_cart(self, product):
+    #if item is already in cart, just update the quantity
+    for i in self.cart_items:
+      if i['product'] == product:
+        self.cart_items.append({'product': product})
+
   def title_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.go_to_home()
@@ -90,7 +96,7 @@ class Base(BaseTemplate):
   def cart_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(Cart('id_name','description', 'image', 'button_text', 'quantity',))
+    self.content_panel.add_component(Cart(items=self.cart_items))
 
   def OurProducts_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -105,21 +111,5 @@ class Base(BaseTemplate):
 
 
 
-  
 
-def contact_link_click(self, **event_args):
-  """This method is called when the Link is shown on the screen"""
-  self.navigate(self.contact_link, Contact())
-
-  def cart_link_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    self.navigate(self.cart_link, Cart(items=self.cart_items))
-
-def subscribe_button_click(self, **event_args):
-  """This method is called when the button is clicked"""
-  email = self.subscribe_textbox.text
-  if email:
-    anvil.server.call('add_subscriber', email)
-    self.subscribe_textbox.text = None
-    Notification("Thanks for subscribing!").show()
 

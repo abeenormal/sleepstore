@@ -17,8 +17,12 @@ class Cart(CartTemplate):
     self.init_components(**properties)
     self.order = []
     self.items = items
+
+    if not self.items:
+      self.empty_cart_panel.visible = True
+      self.column_panel_1.visible = False
    
-    self.cart.repeating_panel.items = self.items
+    self.repeating_panel.items = self.items
     # Any code you write here will run before the form opens.
   def refresh_cart(self):
     """Calls the server to get and display the cart contents."""

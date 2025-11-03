@@ -9,6 +9,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from ..AddToCart import AddToCart
 
 
 class Product(ProductTemplate):
@@ -20,4 +21,4 @@ class Product(ProductTemplate):
 
   def add_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    get_open_form().add_to_cart(self.item)
+    save_clicked = alert(content=AddToCart(item=self.item),large=True)
