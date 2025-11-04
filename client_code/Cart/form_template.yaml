@@ -1,0 +1,55 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'NVEFYC,IOZWIO'}
+    name: empty_cart_label
+    properties: {align: center, font_size: 22, text: There aren't any items in your cart yet!}
+    type: Label
+  - event_bindings: {click: shop_button_click}
+    layout_properties: {grid_position: 'BWUZLD,IHFNJL'}
+    name: shop_button
+    properties: {font_size: 20, role: filled-button, text: Shop Now!}
+    type: Button
+  - layout_properties: {grid_position: 'QMWQOX,ZJNQCY'}
+    name: spacer_1
+    properties: {height: 110.19998168945312}
+    type: Spacer
+  layout_properties: {full_width_row: true, grid_position: 'CTZXJZ,WYVGCZ'}
+  name: empty_cart_panel
+  properties: {visible: false}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'JFOYUE,ZTYHLA'}
+    name: spacer_2
+    properties: {height: 61}
+    type: Spacer
+  - layout_properties: {grid_position: 'XQXXRG,RSYCRZ'}
+    name: label_1
+    properties: {align: left, bold: true, font_size: 24, italic: true, text: My Cart}
+    type: Label
+  - layout_properties: {grid_position: 'XQXXRG,COZBLI LRTFTX,EKVLSA'}
+    name: label_2
+    properties: {align: left, font_size: 22, text: Order Summary, underline: true}
+    type: Label
+  - layout_properties: {grid_position: 'XQXXRG,COZBLI XQNSVV,AJJACH'}
+    name: label_3
+    properties: {font_size: 22, italic: true, text: 'Total:', underline: false}
+    type: Label
+  - layout_properties: {grid_position: 'XQXXRG,COZBLI XQNSVV,XAGSAQ'}
+    name: total_label
+    properties: {align: right, font_size: 22, underline: false}
+    type: Label
+  - event_bindings: {click: checkout_button_click}
+    layout_properties: {grid_position: 'XQXXRG,COZBLI JWSUBY,DTDLJW'}
+    name: checkout_button
+    properties: {icon: 'fa:lock', role: filled-button, text: Checkout}
+    type: Button
+  - layout_properties: {grid_position: 'FMJTPV,FDKXIF'}
+    name: cart_repeating_panel
+    properties: {item_template: AddToCart, role: elevated-card}
+    type: RepeatingPanel
+  layout_properties: {full_width_row: true, grid_position: 'SGYQRR,GVUVXD'}
+  name: column_panel_1
+  properties: {col_widths: '{"RSYCRZ":60}'}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true

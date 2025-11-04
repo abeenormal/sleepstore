@@ -14,6 +14,9 @@ from ..About import About
 from ..MyPurchases import MyPurchases
 from .urls import urls
 from ..Footer import Footer
+from ..Cart import Cart
+from ..OurProducts import OurProducts
+from ..AddToCart import AddToCart
 
 
 class Base(BaseTemplate):
@@ -21,8 +24,10 @@ class Base(BaseTemplate):
  
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.cart_items = []
     self.change_sign_in_text()
     self.handle_urls()
+   
     
 
     # Any code you write here will run before the form opens.
@@ -51,6 +56,13 @@ class Base(BaseTemplate):
   def toggle_my_purchases_link(self):
     self.my_purchases.visible = anvil.users.get_user() is not None
 
+  def add_to_cart(self, product):
+    #if item is already in cart, just update the quantity
+    for i in self.cart_items:
+     if i['product'] == product: 
+      self.cart_items.append({'product': product})
+   
+   
   def title_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.go_to_home()
@@ -83,3 +95,24 @@ class Base(BaseTemplate):
     self.content_panel.add_component(About())
 
     self.refresh_data_bindings()
+
+  def cart_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.content_panel.clear()
+    self.content_panel.add_component(Cart(items=self.cart_items))
+
+  def OurProducts_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.content_panel.clear()
+    self.content_panel.add_component(OurProducts())
+    
+  
+
+
+
+
+
+
+
+
+

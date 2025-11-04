@@ -1,7 +1,27 @@
 components:
-- layout_properties: {grid_position: 'ROJIQV,QSVOZE'}
-  name: content_panel
-  properties: {}
+- data_bindings: []
+  layout_properties: {full_width_row: true, grid_position: 'THDKUG,RJLHQQ'}
+  name: label_2
+  properties:
+    align: center
+    background: theme:Primary Container
+    font_size: 42
+    icon: fa:cloud
+    icon_align: left
+    text: |-
+      Our Products are available for purchase online!
+      No prescription necessary. We Ship all items for FREE!!
+  type: Label
+- layout_properties: {grid_position: 'DOAOZA,CMRUHC'}
+  name: spacer_1
+  properties: {height: 48}
+  type: Spacer
+- components: []
+  layout_properties: {grid_position: 'ROJIQV,QSVOZE'}
+  name: product_panel
+  properties: {role: tonal-card}
   type: ColumnPanel
-container: {type: ColumnPanel}
+container:
+  properties: {spacing_above: none, spacing_below: medium}
+  type: ColumnPanel
 is_package: true

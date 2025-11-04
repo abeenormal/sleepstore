@@ -1,19 +1,24 @@
 allow_embedding: false
 db_schema:
-  products:
+  orders:
     client: none
     columns:
-    - admin_ui: {order: 0.0625, width: 200}
-      name: name
+    - admin_ui: {order: -1, width: 200}
+      name: charge_id
       type: string
+    - admin_ui: {order: 2, width: 200}
+      name: order
+      type: simpleObject
+    server: full
+    title: orders
+  products:
+    client: search
+    columns:
     - admin_ui: {order: 3, width: 200}
       name: description
       type: string
     - admin_ui: {order: 1.0625, width: 200}
       name: price
-      type: number
-    - admin_ui: {order: 5, width: 200}
-      name: quantity
       type: number
     - admin_ui: {order: 1.5, width: 200}
       name: image
@@ -21,11 +26,19 @@ db_schema:
     - admin_ui: {order: 4, width: 200}
       name: id_name
       type: string
-    - admin_ui: {order: 1.125, width: 200}
-      name: created
-      type: datetime
     server: full
     title: Products
+  shopping_cart:
+    client: none
+    columns:
+    - admin_ui: {order: 1, width: 200}
+      name: sessionID
+      type: string
+    - admin_ui: {order: 3, width: 200}
+      name: status
+      type: simpleObject
+    server: full
+    title: Shopping_cart
   users:
     client: none
     columns:
@@ -58,10 +71,13 @@ db_schema:
       type: simpleObject
     server: full
     title: Users
-dependencies: []
+dependencies:
+- dep_id: dep_m1uwx17utvgmr
+  resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
+  version: {version_tag: v3.5.0}
 metadata: {description: SleepSound provides CPAP and other medical supplies for a better night's sleep., title: SleepSound}
 name: 'SleepSound Medical Supply #1'
-package_name: SleepSound_Medical_Supply__1
+package_name: Sleepstore
 renamed: true
 runtime_options:
   client_version: '3'

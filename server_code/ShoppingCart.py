@@ -10,21 +10,18 @@ import anvil.server
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
-@anvil.server.callable
-def get_user_products():
-  user = anvil.users.get_user()
-  if user == None:
-    return[]
+class Product:
+  def __init__(self, id_name,description,image, price):
+    self.id_name = id_name
+    self.description = description
+    self.image = image
+    self.price = price
+  
 
-    
-    if not user["user_products"]:
-      return []
+class CartItem:
+  def __init__(self, product):
+    self.product = product
+ 
 
-  products = []
-  for product in user["user_products"]:
-    product_info = app_tables.products.get(id_name=product)
-    products.append(product_info)
-
-    return products
-
+  
 
