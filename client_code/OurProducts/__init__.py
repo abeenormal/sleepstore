@@ -23,6 +23,6 @@ class OurProducts(OurProductsTemplate):
     products = app_tables.products.search()
     for p in products:
       if p is not None:             
-       self.product_panel.add_component(Product(items=p)) 
+       self.product_panel.add_component(Product(item=p), width='30%') 
   
 
