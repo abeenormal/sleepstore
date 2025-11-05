@@ -10,14 +10,14 @@ from anvil.tables import app_tables
 # This is a package.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
 class Product:
-  def __init__(self,id_name,description,image, price):
-    self.product_id = id_name
+  def __init__(self,item_name,description,image, price):
+    self.product_id = item_name
     self.description = description
     self.image = image
     self.price = price
 
 class CartItems:
   def __init__(self, items):
-    self.items = Product()
+    self.items = items
  
     
