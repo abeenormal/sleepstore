@@ -62,8 +62,8 @@ class Base(BaseTemplate):
   def add_to_cart(self):
     #if item is already in cart, just update the quantity
    for i in self.cart_items:
-    self.cart_items.append(i)
-    self.display_cart()
+      self.cart_items.append(i)
+      self.display_cart()
     
     
    

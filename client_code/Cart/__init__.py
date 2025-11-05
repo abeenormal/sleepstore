@@ -18,7 +18,7 @@ class Cart(CartTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.order = []
-    item = self.items
+    items = self.items
     
   
 
