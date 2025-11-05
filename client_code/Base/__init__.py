@@ -24,9 +24,9 @@ class Base(BaseTemplate):
  
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.cart_items = []
     self.change_sign_in_text()
     self.handle_urls()
+    self.cart_items = []
    
     
 
@@ -59,9 +59,10 @@ class Base(BaseTemplate):
   def display_cart(self):
     self.cart_repeating_panel.items = self.cart_items
 
-  def add_to_cart(self):
+  def add_to_cart(self, product):
     #if item is already in cart, just update the quantity
    for i in self.cart_items:
+     if i ['product']== product:
       self.cart_items.append(i)
       self.display_cart()
     
