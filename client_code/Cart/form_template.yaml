@@ -45,7 +45,7 @@ components:
     type: Button
   - layout_properties: {grid_position: 'FMJTPV,FDKXIF'}
     name: cart_repeating_panel
-    properties: {item_template: AddToCart, role: elevated-card}
+    properties: {item_template: Cart.CartItems, role: elevated-card}
     type: RepeatingPanel
   layout_properties: {full_width_row: true, grid_position: 'SGYQRR,GVUVXD'}
   name: column_panel_1

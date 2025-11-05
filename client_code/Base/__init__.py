@@ -56,11 +56,16 @@ class Base(BaseTemplate):
   def toggle_my_purchases_link(self):
     self.my_purchases.visible = anvil.users.get_user() is not None
 
-  def add_to_cart(self, product):
+  def display_cart(self):
+    self.cart_repeating_panel.items = self.cart_items
+
+  def add_to_cart(self, items):
     #if item is already in cart, just update the quantity
-    for i in self.cart_items:
-     if i['product'] == product: 
-      self.cart_items.append({'product': product})
+   for i in self.cart_items:
+    self.cart_items.append(items)
+    self.display_cart()
+    
+    
    
    
   def title_click(self, **event_args):
