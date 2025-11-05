@@ -14,11 +14,13 @@ from ..AddToCart import AddToCart
 
 
 class Cart(CartTemplate):
-  def __init__(self, item, **properties):
+  def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.order = []
     item = self.items
+    
+  
 
     if not self.items:
       self.empty_cart_panel.visible = True

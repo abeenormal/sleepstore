@@ -16,8 +16,8 @@ class Product:
     self.image = image
     self.price = price
 
-class CartItem:
+class CartItems:
   def __init__(self, items):
-    self.items = Product
+    self.items = Product()
  
     

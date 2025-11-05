@@ -1,7 +1,7 @@
 components:
 - components:
   - data_bindings:
-    - {code: 'self.item[''id_name'']', property: text, writeback: false}
+    - {code: 'self.item[''item_name'']', property: text, writeback: false}
     layout_properties: {grid_position: 'XHGRNV,JVSHVE'}
     name: label_1
     properties: {align: center, font_size: 22}

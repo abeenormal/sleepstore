@@ -13,12 +13,12 @@ from anvil.tables import app_tables
 
 
 class AddToCart(AddToCartTemplate):
-  def __init__(self, **properties):
+  def __init__(self, items, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-  def add_button_click(self, items, **event_args):
+  def add_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.items.add_items()
     self.add_button.visible = False

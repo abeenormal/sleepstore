@@ -59,10 +59,10 @@ class Base(BaseTemplate):
   def display_cart(self):
     self.cart_repeating_panel.items = self.cart_items
 
-  def add_to_cart(self, items):
+  def add_to_cart(self):
     #if item is already in cart, just update the quantity
    for i in self.cart_items:
-    self.cart_items.append(items)
+    self.cart_items.append(i)
     self.display_cart()
     
     
