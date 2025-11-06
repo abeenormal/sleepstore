@@ -21,8 +21,9 @@ class Product(ProductTemplate):
 
     # Any code you write here will run before the form opens.
 
-  def add_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-          self.items = e      
-      save_clicked = alert(content=AddToCart(e),large=True)
- 
+
+  def add_item_button_click(self, **event_args):
+    """This method is called when the button is clicked""" 
+    # Insert this code before the line that throws the error
+    save_clicked = alert(content=AddToCart(item = self.item),large=True)
+
