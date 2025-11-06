@@ -2,7 +2,7 @@ components:
 - components:
   - layout_properties: {grid_position: 'NVEFYC,IOZWIO'}
     name: empty_cart_label
-    properties: {align: center, font_size: 22, text: There aren't any items in your cart yet!}
+    properties: {align: center, font_size: 22, text: There are no items in your cart.}
     type: Label
   - event_bindings: {click: shop_button_click}
     layout_properties: {grid_position: 'BWUZLD,IHFNJL'}
@@ -11,7 +11,7 @@ components:
     type: Button
   - layout_properties: {grid_position: 'QMWQOX,ZJNQCY'}
     name: spacer_1
-    properties: {height: 110.19998168945312}
+    properties: {height: 50.79998779296875}
     type: Spacer
   layout_properties: {full_width_row: true, grid_position: 'CTZXJZ,WYVGCZ'}
   name: empty_cart_panel
@@ -47,5 +47,7 @@ components:
   name: column_panel_1
   properties: {col_widths: '{}'}
   type: ColumnPanel
-container: {type: ColumnPanel}
+container:
+  properties: {visible: false}
+  type: ColumnPanel
 is_package: true

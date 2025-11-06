@@ -31,19 +31,18 @@ class Cart(CartTemplate):
     self.repeating_panel_1.items = self.items
  
 
-    self.total = sum(item['product']['price'] for item in self.items)
+    self.total = sum(item['product']['price'] * item['quantity'] for item in self.items)
     # Any code you write here will run before the form opens.
-    self.total_label.text = f"${self.total:.2f}"
+    self.total_label.text = f"${self.total:.02f}"
 
   def shop_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    get_open_form().shop_link_click()
-    
+    get_open_form().Shop_link()
 
   def checkout_button_click(self, **event_args):
     """This method is called when the button is clicked"""  
     for i in self.items:
-      self.order.append({'name':i['product']['name']})
+      self.order.append({'item_name':i['product']['item_name'], 'quantity':i['quantity']})
     try:
       charge = stripe.checkout.charge(amount=self.total*100, currency="USD")
   
@@ -53,7 +52,7 @@ class Cart(CartTemplate):
     anvil.server.call('add_order', charge['charge_id'], self.order)
 
     get_open_form().cart_items = []
-    get_open_form().cart_link_click()
+    get_open_form().cart_click()
     Notification("Your order has been received!").show()
 
  

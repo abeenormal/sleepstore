@@ -25,28 +25,27 @@ class Base(BaseTemplate):
     self.init_components(**properties)
     self.change_sign_in_text()
     self.handle_urls()
-    self.navigate(self.home_link, Home())
     self.cart_items = []
    
-    for link in [self.home_link, self.OurProducts_link, self.about_link, self.cart_link]:
-      link.role = ['spaced-title', 'display-none-responsive'] 
-
+  
     # Any code you write here will run before the form opens.
     self.background = 'url("_/theme/clouds.png")'
 
-  def add_to_cart(self, product):
+  def add_to_cart(self, product, quantity):
     #if item is already in cart, just update the quantity
    
-    for i in self.cart_items:
-      self.cart_items = []
-      if i ['product']['item_name'] not in self.cart_items:
-                      
-        self.cart_items.append({'product': product})
+    for i in self.cart_items:    
+      if i ['product'] == product:
+         i['quantity'] += quantity
+         break
+    else:                       
+      self.cart_items.append({'product': product, 'quantity': quantity})
+     
 
   def navigate(self, active_link, form):
-    for i in [self.home_link, self.shop_link, self.about_link, self.contact_link, self.cart_link]:
-     self.column_panel_1.clear()
-    self.column_panel_1.add_component(form, full_width_row=True)
+    for i in [self.OurProducts, self.about_us, self.cart]:
+     self.content_panel.clear()
+    self.content_panel.add_component(form, full_width_row=True)
       
     
   def handle_urls(self):
@@ -83,7 +82,8 @@ class Base(BaseTemplate):
     self.content_panel.add_component(MyPurchases())
 
   def go_to_home(self): 
-   self.navigate(self.home_link, Home())
+    self.content_panel.clear()
+    self.content_panel.add_component(Home())
 
   def sign_in_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -100,16 +100,21 @@ class Base(BaseTemplate):
 
   def about_us_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.navigate(self.about_us_link, About())
+    self.navigate(self.about_us, About())
  
 
   def cart_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.navigate(self.cart_link, Cart(items=self.cart_items))
+    self.navigate(self.cart, Cart(items=self.cart_items))
+
+  
 
   def OurProducts_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.navigate(self.OurProducts_link, OurProducts())
+    self.navigate(self.OurProducts, OurProducts())
+
+  def Shop_link(self, **event_args):
+    self.navigate(self.OurProducts, OurProducts())
     
   
 

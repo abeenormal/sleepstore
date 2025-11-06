@@ -20,10 +20,14 @@ class AddToCart(AddToCartTemplate):
     # Any code you write here will run before the form opens.
   def add_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    
-    get_open_form().add_to_cart(self.item)
-    self.add_button.visible = False
-    self.button_1.visible= True
+    if self.quantity_box.text:
+      get_open_form().add_to_cart(self.item, self.quantity_box.text)
+      self.quantity_box.text = ""
+      self.add_button.visible = False
+      self.button_1.visible= True
+    else:
+      self.quantity_box.text = ""
+      Notification("please specify a quantity").show()
   
 
 
