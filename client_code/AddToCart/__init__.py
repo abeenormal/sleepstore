@@ -28,6 +28,10 @@ class AddToCart(AddToCartTemplate):
     else:
       self.quantity_box.text = ""
       Notification("please specify a quantity").show()
+
+  def quantity_box_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
   
 
 
