@@ -52,6 +52,6 @@ class Cart(CartTemplate):
     get_open_form().cart_click()
     Notification("Your order has been received!").show()
     
-    self.refresh_data_bindings()
+   
 
  
