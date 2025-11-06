@@ -25,11 +25,11 @@ class Cart(CartTemplate):
 
     if not self.items:
       self.empty_cart_panel.visible = True
-      self.cart_repeating_panel.visible = False
-      print (f"{self.items}")
+      self.column_panel_1.visible = False
+  
    
-    self.cart_repeating_panel.items = self.items
-    print (f"{self.items}")
+    self.repeating_panel_1.items = self.items
+ 
 
     self.total = sum(item['product']['price'] for item in self.items)
     # Any code you write here will run before the form opens.
@@ -37,7 +37,7 @@ class Cart(CartTemplate):
 
   def shop_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    get_open_form(Product())
+    get_open_form().shop_link_click()
     
 
   def checkout_button_click(self, **event_args):

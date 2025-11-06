@@ -329,7 +329,7 @@ roles:
 - components: [TextBox, TextArea, DatePicker, DropDown]
   name: input-error
 - components: [Page]
-  display_in_toolbox: false
+  display_in_toolbox: true
   name: Background
 - components: []
   display_in_toolbox: true

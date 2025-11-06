@@ -5,11 +5,6 @@ components:
     name: my_purchases
     properties: {bold: true, font_size: 20, foreground: 'theme:Primary', icon: 'fa:fast-forward', italic: true, text: My Purchases, visible: false}
     type: Link
-  - components: []
-    layout_properties: {}
-    name: contact
-    properties: {bold: true, font_size: 20, foreground: 'theme:Primary', italic: true, text: Contact Us}
-    type: Link
   - event_bindings: {click: about_us_click}
     layout_properties: {}
     name: about_us

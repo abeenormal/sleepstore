@@ -18,28 +18,28 @@ components:
   properties: {visible: false}
   type: ColumnPanel
 - components:
-  - layout_properties: {grid_position: 'JQKIPR,ZHAEAL EMERHW,ANEFBR'}
+  - layout_properties: {grid_position: 'JQKIPR,ZHAEAL KOFRZH,YVOXYV'}
     name: label_1
-    properties: {align: center, bold: true, font_size: 24, italic: true, text: My Cart}
+    properties: {align: center, bold: true, font: Yeseva One, font_size: 24, italic: true, text: My Cart}
     type: Label
-  - layout_properties: {grid_position: 'JQKIPR,ZHAEAL SHXJQZ,WAKBZQ'}
-    name: label_3
-    properties: {align: center, font_size: 22, italic: true, text: 'Total:', underline: false}
-    type: Label
-  - layout_properties: {grid_position: 'JQKIPR,ZHAEAL WNDPWV,AYNAZC'}
-    name: total_label
-    properties: {align: center, font_size: 22, underline: true}
-    type: Label
-  - layout_properties: {grid_position: 'JQKIPR,CFPIRY'}
+  - layout_properties: {grid_position: 'JQKIPR,ZHAEAL IDYDEP,DBEFBG'}
+    name: repeating_panel_1
+    properties: {item_template: Cart.ItemTemplate1}
+    type: RepeatingPanel
+  - layout_properties: {grid_position: 'JQKIPR,JCWVHB AONQIO,NGGTVS'}
     name: label_2
     properties: {align: center, font_size: 22, text: Order Summary, underline: true}
     type: Label
-  - layout_properties: {grid_position: 'JQKIPR,QGHTSV'}
-    name: cart_repeating_panel
-    properties: {item_template: Cart.CartItems, role: elevated-card}
-    type: RepeatingPanel
+  - layout_properties: {grid_position: 'JQKIPR,JCWVHB USQKYU,WCBMVE'}
+    name: label_3
+    properties: {align: center, font_size: 22, italic: true, text: 'Total:', underline: false}
+    type: Label
+  - layout_properties: {grid_position: 'JQKIPR,JCWVHB EUPSBR,LTISLY'}
+    name: total_label
+    properties: {align: center, font_size: 22, underline: true}
+    type: Label
   - event_bindings: {click: checkout_button_click}
-    layout_properties: {grid_position: 'AONDND,VXZWAC'}
+    layout_properties: {grid_position: 'JQKIPR,JCWVHB VABTMB,ZGSZNU'}
     name: checkout_button
     properties: {icon: 'fa:lock', role: filled-button, text: Checkout}
     type: Button
