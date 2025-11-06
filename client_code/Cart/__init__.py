@@ -20,17 +20,14 @@ class Cart(CartTemplate):
     self.init_components(**properties)
     self.items = items
     self.order = []
-    
-  
+      
 
     if not self.items:
       self.empty_cart_panel.visible = True
       self.column_panel_1.visible = False
   
-   
     self.repeating_panel_1.items = self.items
  
-
     self.total = sum(item['product']['price'] * item['quantity'] for item in self.items)
     # Any code you write here will run before the form opens.
     self.total_label.text = f"${self.total:.02f}"
@@ -54,5 +51,7 @@ class Cart(CartTemplate):
     get_open_form().cart_items = []
     get_open_form().cart_click()
     Notification("Your order has been received!").show()
+    
+    self.refresh_data_bindings()
 
  
