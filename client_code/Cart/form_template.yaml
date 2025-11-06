@@ -18,38 +18,34 @@ components:
   properties: {visible: false}
   type: ColumnPanel
 - components:
-  - layout_properties: {grid_position: 'JFOYUE,ZTYHLA'}
-    name: spacer_2
-    properties: {height: 61}
-    type: Spacer
-  - layout_properties: {grid_position: 'XQXXRG,RSYCRZ'}
+  - layout_properties: {grid_position: 'JQKIPR,ZHAEAL EMERHW,ANEFBR'}
     name: label_1
-    properties: {align: left, bold: true, font_size: 24, italic: true, text: My Cart}
+    properties: {align: center, bold: true, font_size: 24, italic: true, text: My Cart}
     type: Label
-  - layout_properties: {grid_position: 'XQXXRG,COZBLI LRTFTX,EKVLSA'}
-    name: label_2
-    properties: {align: left, font_size: 22, text: Order Summary, underline: true}
-    type: Label
-  - layout_properties: {grid_position: 'XQXXRG,COZBLI XQNSVV,AJJACH'}
+  - layout_properties: {grid_position: 'JQKIPR,ZHAEAL SHXJQZ,WAKBZQ'}
     name: label_3
-    properties: {font_size: 22, italic: true, text: 'Total:', underline: false}
+    properties: {align: center, font_size: 22, italic: true, text: 'Total:', underline: false}
     type: Label
-  - layout_properties: {grid_position: 'XQXXRG,COZBLI XQNSVV,XAGSAQ'}
+  - layout_properties: {grid_position: 'JQKIPR,ZHAEAL WNDPWV,AYNAZC'}
     name: total_label
-    properties: {align: right, font_size: 22, underline: false}
+    properties: {align: center, font_size: 22, underline: true}
     type: Label
-  - event_bindings: {click: checkout_button_click}
-    layout_properties: {grid_position: 'XQXXRG,COZBLI JWSUBY,DTDLJW'}
-    name: checkout_button
-    properties: {icon: 'fa:lock', role: filled-button, text: Checkout}
-    type: Button
-  - layout_properties: {grid_position: 'FMJTPV,FDKXIF'}
+  - layout_properties: {grid_position: 'JQKIPR,CFPIRY'}
+    name: label_2
+    properties: {align: center, font_size: 22, text: Order Summary, underline: true}
+    type: Label
+  - layout_properties: {grid_position: 'JQKIPR,QGHTSV'}
     name: cart_repeating_panel
     properties: {item_template: Cart.CartItems, role: elevated-card}
     type: RepeatingPanel
+  - event_bindings: {click: checkout_button_click}
+    layout_properties: {grid_position: 'AONDND,VXZWAC'}
+    name: checkout_button
+    properties: {icon: 'fa:lock', role: filled-button, text: Checkout}
+    type: Button
   layout_properties: {full_width_row: true, grid_position: 'SGYQRR,GVUVXD'}
   name: column_panel_1
-  properties: {col_widths: '{"RSYCRZ":60}'}
+  properties: {col_widths: '{}'}
   type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true

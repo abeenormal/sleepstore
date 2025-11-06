@@ -1,7 +1,7 @@
 components:
 - components:
   - data_bindings:
-    - {code: 'self.item[''product''][''id_name'']', property: text, writeback: false}
+    - {code: 'self.item[''product''][''item_name'']', property: text, writeback: false}
     layout_properties: {grid_position: 'JGDTSU,RVPDTO'}
     name: item_label_name
     properties: {align: center, font_size: 20}

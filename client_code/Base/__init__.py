@@ -10,13 +10,12 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Home import Home
-from ..About import About
-from ..MyPurchases import MyPurchases
 from .urls import urls
 from ..Footer import Footer
-from ..Cart import Cart
+from ..About import About
 from ..OurProducts import OurProducts
-from ..AddToCart import AddToCart
+from ..Cart import Cart
+from ..MyPurchases import MyPurchases
 
 
 class Base(BaseTemplate):
@@ -32,7 +31,14 @@ class Base(BaseTemplate):
 
     # Any code you write here will run before the form opens.
     self.background = 'url("_/theme/clouds.png")'
-   
+
+  def add_to_cart(self, product):
+    #if item is already in cart, just update the quantity
+    for i in self.cart_items:
+      if i ['product']["item_name"]== product:
+        self.cart_items.append({'product': product})
+        print (f"{self.cart_items}")
+      
     
   def handle_urls(self):
     url = get_url_hash().lower()
@@ -59,15 +65,8 @@ class Base(BaseTemplate):
   def display_cart(self):
     self.cart_repeating_panel.items = self.cart_items
 
-  def add_to_cart(self, product):
-    #if item is already in cart, just update the quantity
-   for i in self.cart_items:
-     if i ['product']== product:
-      self.cart_items.append(i)
-      self.display_cart()
-    
-    
-   
+ 
+      
    
   def title_click(self, **event_args):
     """This method is called when the link is clicked"""

@@ -13,7 +13,7 @@ from anvil.tables import app_tables
 
 class CartItems(CartItemsTemplate):
   def __init__(self, **properties):
-    self.item = {'product': 'id_name'}
+    
   
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
