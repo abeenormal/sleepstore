@@ -19,23 +19,13 @@ def get_product_details(item_name):
 def get_all_products():
   return app_tables.products.client_readable()
 
+
+
 @anvil.server.callable
-def get_user_products():
+def add_order(email,charge_id, cart_items):
   user = anvil.users.get_user()
-  if user == None:
-    return[]
-
-
-    if not user["user_products"]:
-      return []
-
-  products = []
-  for product in user["user_products"]:
-    product_info = app_tables.products.get(item_name=product)
-    products.append(product_info)
-
-    return products
-
-@anvil.server.callable
-def add_order(charge_id, cart_items):
-  app_tables.orders.add_row(charge_id=charge_id, order=cart_items)
+  if not user:
+    raise anvil.users.AuthenticationFailed("You must be logged in to place an order.")
+  if user ('email') == current_user and cart-items is None:
+    alert 
+  app_tables.orders.add_row(email=email,charge_id=charge_id, order=cart_items)

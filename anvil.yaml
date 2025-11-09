@@ -9,6 +9,9 @@ db_schema:
     - admin_ui: {order: 2, width: 200}
       name: order
       type: simpleObject
+    - admin_ui: {order: -2, width: 200}
+      name: email
+      type: string
     server: full
     title: orders
   products:
@@ -55,9 +58,6 @@ db_schema:
     - admin_ui: {order: 7, width: 200}
       name: signed_up
       type: datetime
-    - admin_ui: {order: 8, width: 200}
-      name: user_products
-      type: simpleObject
     - admin_ui: {width: 200}
       name: email_confirmation_key
       type: string
