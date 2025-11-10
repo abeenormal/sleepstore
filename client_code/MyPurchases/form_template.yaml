@@ -4,8 +4,12 @@ components:
     name: no_purchases_label
     properties: {align: center, font_size: 22, text: '"Awww, you don''t have any purchases yet :("'}
     type: Label
+  - layout_properties: {grid_position: 'WKIILY,WXCVQZ'}
+    name: shop
+    properties: {role: filled-button, text: Shop Now!}
+    type: Button
   layout_properties: {grid_position: 'WBOBUX,RZHQEF'}
-  name: content_panel
+  name: empty_purchase_panel
   properties: {}
   type: ColumnPanel
 container: {type: ColumnPanel}

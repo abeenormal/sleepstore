@@ -46,7 +46,7 @@ class Cart(CartTemplate):
     except:
       return
 
-    anvil.server.call('add_order', charge['charge_id'], self.order)
+    anvil.server.call('add_order',charge['charge_id'], self.order)
 
     get_open_form().cart_items = []
     get_open_form().cart_click()

@@ -22,10 +22,18 @@ def get_all_products():
 
 
 @anvil.server.callable
-def add_order(email,charge_id, cart_items):
-  user = anvil.users.get_user()
-  if not user:
-    raise anvil.users.AuthenticationFailed("You must be logged in to place an order.")
-  if user ('email') == current_user and cart-items is None:
-    alert 
-  app_tables.orders.add_row(email=email,charge_id=charge_id, order=cart_items)
+def add_order(charge_id, cart_items):
+  user = tables.app_tables.users.get(email=anvil.users.get_user()['email'])
+  app_tables.orders.add_row(email=user['email'],charge_id=charge_id,order=cart_items)
+
+@anvil.server.callable
+
+def get_user_purchases(user_email):
+   user_orders = app_tables.orders.search(email=user_email)
+   purchases = [
+    {'email': r['email'],
+     'order': r['order'],
+    }
+    for r in user_orders]
+   return purchases
+ 
