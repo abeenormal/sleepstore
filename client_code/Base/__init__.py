@@ -40,10 +40,14 @@ class Base(BaseTemplate):
          break
     else:                       
       self.cart_items.append({'product': product, 'quantity': quantity})
-     
 
+
+ 
+      
+
+      
   def navigate(self, active_link, form):
-    for i in [self.OurProducts, self.about_us, self.cart]:
+    for i in [self.OurProducts, self.about_us, self.cart, self.my_purchases]:
      self.content_panel.clear()
     self.content_panel.add_component(form, full_width_row=True)
       
@@ -78,8 +82,10 @@ class Base(BaseTemplate):
 
   def my_purchases_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.content_panel.clear()
-    self.content_panel.add_component(MyPurchases())
+    user = anvil.users.get_user()
+    if user:
+      user_email = user['email']
+      self.navigate(self.my_purchases, MyPurchases(user_email))
 
   def go_to_home(self): 
     self.content_panel.clear()
