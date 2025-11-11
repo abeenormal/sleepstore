@@ -27,9 +27,10 @@ def add_order(charge_id, cart_items):
   app_tables.orders.add_row(email=user['email'],charge_id=charge_id,order=cart_items)
 
 @anvil.server.callable
-def get_user_purchases(user_email, orders):
+def get_user_purchases():
   # Get the currently logged-in user's row from the 'users' table
   user = anvil.users.get_user()
+  user_email = user
   if user is None:
     return []
     orders = app_tables.orders.search(user_email)

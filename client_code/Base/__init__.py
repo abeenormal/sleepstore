@@ -83,7 +83,7 @@ class Base(BaseTemplate):
   def my_purchases_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(MyPurchases(user_email='user_email', order='order'))
+    self.content_panel.add_component(MyPurchases())
     
    
 

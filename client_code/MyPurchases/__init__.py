@@ -17,19 +17,15 @@ from ..OurProducts import OurProducts
 
 
 class MyPurchases(MyPurchasesTemplate):
-  def __init__(self,user_email,order, **properties):
+  def __init__(self, **properties):
 
        
     # Set Form properties and Data Bindings.
    self.init_components(**properties)
-   self.order = order
-   self.order = [] 
-
- 
-   if not self.order:
-      self.empty_purchase_panel.visible = True
-      self.purchase_panel.visible = False
-      anvil.server.call.get_user_purchases(user_email, order)
+   
+  
+  anvil.server.call.get_user_purchases()
+  self.repeating_panel_1.items
     
 
 
