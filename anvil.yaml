@@ -10,7 +10,7 @@ db_schema:
       name: order
       type: simpleObject
     - admin_ui: {order: -2, width: 200}
-      name: email
+      name: user_email
       type: string
     server: full
     title: orders

@@ -1,0 +1,15 @@
+components:
+- data_bindings:
+  - {code: 'self.item[''user_email'']', property: text, writeback: false}
+  layout_properties: {grid_position: 'LZBQEU,TECTZI'}
+  name: label_1
+  properties: {}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''order'']', property: text, writeback: false}
+  layout_properties: {grid_position: 'LZBQEU,VMHOGK'}
+  name: label_2
+  properties: {}
+  type: Label
+container: {type: ColumnPanel}
+is_package: true
