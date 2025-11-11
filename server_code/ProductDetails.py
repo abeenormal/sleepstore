@@ -27,13 +27,6 @@ def add_order(charge_id, cart_items):
   app_tables.orders.add_row(email=user['email'],charge_id=charge_id,order=cart_items)
 
 @anvil.server.callable
-
-def get_user_purchases(user_email):
-   user_orders = app_tables.orders.search(email=user_email)
-   purchases = [
-    {'email': r['email'],
-     'order': r['order'],
-    }
-    for r in user_orders]
-   return purchases
- 
+def get_user_purchases():
+    for user_email in app_tables.orders.search(items = 'order'):
+     return [r['order'] for r in app_tables.orders.search(email=['email'])] 

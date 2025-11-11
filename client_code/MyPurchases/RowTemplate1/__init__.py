@@ -15,8 +15,8 @@ class RowTemplate1(RowTemplate1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    user_email = orders('user_email')
-    self.data_grid_1.self.repeating_panel_1.items=anvil.server.call('get_user_purchases', user_email)
+
+    
 
     # Any code you write here will run before the form opens.
      

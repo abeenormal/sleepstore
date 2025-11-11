@@ -14,20 +14,25 @@ components:
   properties: {}
   type: ColumnPanel
 - components:
-  - data_bindings: []
-    layout_properties: {}
-    name: repeating_panel_1
-    properties: {item_template: MyPurchases.RowTemplate1}
-    type: RepeatingPanel
-  data_bindings: []
-  layout_properties: {grid_position: 'KNOVWF,MQUPHO'}
-  name: data_grid_1
-  properties:
-    auto_header: true
-    columns:
-    - {data_key: email, id: JKSDUP, title: email}
-    - {data_key: orders, expand: true, id: VJQQOR, title: Orders}
-    show_page_controls: false
-  type: DataGrid
+  - components:
+    - data_bindings: []
+      layout_properties: {}
+      name: repeating_panel_1
+      properties: {item_template: MyPurchases.RowTemplate1}
+      type: RepeatingPanel
+    data_bindings: []
+    layout_properties: {grid_position: 'UXRJVZ,CIVSTA'}
+    name: data_grid_1
+    properties:
+      auto_header: true
+      columns:
+      - {data_key: email, id: JKSDUP, title: email}
+      - {data_key: orders, expand: true, id: VJQQOR, title: Orders}
+      show_page_controls: false
+    type: DataGrid
+  layout_properties: {grid_position: 'OBYIDJ,CIIDRC'}
+  name: purchase_panel
+  properties: {}
+  type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true
