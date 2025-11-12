@@ -26,6 +26,7 @@ class Base(BaseTemplate):
     self.change_sign_in_text()
     self.handle_urls()
     self.cart_items = []
+ 
    
   
     # Any code you write here will run before the form opens.
@@ -83,7 +84,7 @@ class Base(BaseTemplate):
   def my_purchases_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(MyPurchases())
+    open_form('MyPurchases')
     
    
 

@@ -18,14 +18,20 @@ from ..OurProducts import OurProducts
 
 class MyPurchases(MyPurchasesTemplate):
   def __init__(self, **properties):
-
+  
        
     # Set Form properties and Data Bindings.
    self.init_components(**properties)
-   
+
+
+    
+  def purchased_items(self):
+    app.tables.orders.search(order='purchased_items', user_email='user_email')
+    return
+    self.repeating_panel_1.self_label_1 = "user_email" 
+    self.repeating_panel_1.self_label_2 = 'purchased_items'
   
-  anvil.server.call.get_user_purchases()
-  self.repeating_panel_1.items
+
     
 
 
