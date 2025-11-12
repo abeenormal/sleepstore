@@ -19,11 +19,13 @@ from ..Product import Product
 
 class MyPurchases(MyPurchasesTemplate):
   def __init__(self, **properties):
-  
+   self.load_products
        
     # Set Form properties and Data Bindings.
    self.init_components(**properties)
 
+
+  
   def load_products(self):
     products = anvil.server.call("get_purchased_items")
 
