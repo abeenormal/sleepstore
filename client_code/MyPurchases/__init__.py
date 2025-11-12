@@ -27,7 +27,9 @@ class MyPurchases(MyPurchasesTemplate):
     
   def purchased_items(self):
    user = anvil.users.get.user()
-    if user
+    if user == None:
+      alert("please sign in!")
+      
  
     return
     self.repeating_panel_1.self_label_1 = "user_email" 
