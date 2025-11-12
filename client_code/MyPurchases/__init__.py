@@ -23,7 +23,7 @@ class MyPurchases(MyPurchasesTemplate):
        
     # Set Form properties and Data Bindings.
    self.init_components(**properties)
-   self.load_products()
+   self.load_products('purchased_items')
 
   
   def load_products(self, purchased_items):
@@ -33,12 +33,9 @@ class MyPurchases(MyPurchasesTemplate):
 
     if items is not None and len(purchased_items)> 0: 
       self.empty_purchase_panel.visible = False
-
-      self.item_template1_1 = RepeatingPanel()
-      for i, items in purchased_items enumerate():
-        c = Product(item_name=product["item_name"], description=product["description"], image=product["image"],)
+    get_open_form().purchased_items = []
      
-      get_open_form().add_component(c)
+      
 
 
 
