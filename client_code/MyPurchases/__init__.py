@@ -33,7 +33,7 @@ class MyPurchases(MyPurchasesTemplate):
 
     if items is not None and len(purchased_items)> 0: 
       self.empty_purchase_panel.visible = False
-      get_open_form().purchased_items = []
+      self.repeating_panel_1.items.purchased_items = []
      
       
 
