@@ -24,6 +24,8 @@ def get_all_products():
 @anvil.server.callable
 def add_order(charge_id, cart_items):
   user = tables.app_tables.users.get(email=anvil.users.get_user()['email'])
+  for i in cart_items:
+   tables.app.tables.users.append()
   app_tables.orders.add_row(email=user['email'],charge_id=charge_id,order=cart_items)
 
 
