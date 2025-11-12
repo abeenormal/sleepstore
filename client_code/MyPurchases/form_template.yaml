@@ -14,16 +14,6 @@ components:
   properties: {}
   type: ColumnPanel
 - components:
-  - layout_properties: {grid_position: 'CXAAXY,GLOLZS'}
-    name: label_1
-    properties: {bold: true, font_size: 20, text: My Purchased Items}
-    type: Label
-  - data_bindings:
-    - {code: 'self.item[''user''][''email'']', property: text, writeback: false}
-    layout_properties: {grid_position: 'CXAAXY,POXAJD'}
-    name: label_2
-    properties: {align: right, font_size: 20}
-    type: Label
   - data_bindings: []
     layout_properties: {grid_position: 'BUFKRF,JILGBG'}
     name: item_template1_1

@@ -121,7 +121,7 @@ class Base(BaseTemplate):
     self.navigate(self.OurProducts, OurProducts())
 
   def Shop_link(self, **event_args):
-    self.navigate(self.ourproducts, OurProducts())
+    self.navigate(self.OurProducts, OurProducts())
     
   
 
