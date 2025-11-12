@@ -26,8 +26,9 @@ class MyPurchases(MyPurchasesTemplate):
 
     
   def purchased_items(self):
-    app.tables.orders.search(order='purchased_items')
-    for i in self.purchased_items()
+   user = anvil.users.get.user()
+    if user
+ 
     return
     self.repeating_panel_1.self_label_1 = "user_email" 
     self.repeating_panel_1.self_label_2 = 'purchased_items'
