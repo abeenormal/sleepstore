@@ -25,7 +25,7 @@ def get_all_products():
 def add_order(charge_id, cart_items):
   user = tables.app_tables.users.get(email=anvil.users.get_user()['email'])
   app_tables.orders.add_row(email=user['email'],charge_id=charge_id,order=cart_items)
-  tables.app_table.users.add_column(purchased_items=cart_items)
+  
 
 @anvil.server.callable
 def get_purchased_items():
@@ -40,4 +40,4 @@ def get_purchased_items():
     for product in user['purchased_items']:
       product_info = app_tables.products.get(item_name=product)
       products.append(product_info)
-  return products
+    return products
