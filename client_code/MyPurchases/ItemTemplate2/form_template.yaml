@@ -6,10 +6,16 @@ components:
   properties: {font_size: 18}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''order'']', property: content, writeback: false}
+  - {code: 'self.item[''purchase_name'']', property: content, writeback: false}
   layout_properties: {grid_position: 'EYYHFN,WMCTUU'}
   name: orders_label
   properties: {font_size: 18}
+  type: RichText
+- data_bindings:
+  - {code: 'self.item[''quantity'']', property: content, writeback: false}
+  layout_properties: {grid_position: 'EYYHFN,OQIRDA'}
+  name: quantity_label
+  properties: {}
   type: RichText
 container:
   data_bindings: []

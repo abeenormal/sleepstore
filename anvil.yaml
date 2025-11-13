@@ -7,11 +7,14 @@ db_schema:
       name: charge_id
       type: string
     - admin_ui: {order: 2, width: 927}
-      name: order
+      name: purchase_name
       type: simpleObject
     - admin_ui: {order: -2, width: 200}
       name: user_email
       type: string
+    - admin_ui: {order: 3, width: 200}
+      name: quantity
+      type: number
     server: full
     title: orders
   products:

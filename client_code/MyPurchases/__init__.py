@@ -18,10 +18,13 @@ from ..Product import Product
 
 
 class MyPurchases(MyPurchasesTemplate):
-  def __init__(self, order, **properties):
+  def __init__(self, user_email, purchase_name, quantity, **properties):
    
        
     # Set Form properties and Data Bindings.
+    self.email_name_label = user_email
+    self.purchase_label = purchase_name
+    se
    self.init_components(**properties)
    self.item = order
    order = []
@@ -29,11 +32,11 @@ class MyPurchases(MyPurchasesTemplate):
   
     
   
-  def load_products(self, order):
+  def load_products(self, user_email):
     user = anvil.users.get_user()
     if user:
-     anvil.server.call('get_purchased_items', order='item_name')    
-    self.repeating_panel_1.items = order
+     anvil.server.call('get_purchased_items')    
+    self.repeating_panel_1.items = self.items
     
    
         
