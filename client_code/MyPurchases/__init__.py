@@ -18,22 +18,24 @@ from ..Product import Product
 
 
 class MyPurchases(MyPurchasesTemplate):
-  def __init__(self, **properties):
+  def __init__(self, orders, self_item, **properties):
    
        
     # Set Form properties and Data Bindings.
    self.init_components(**properties)
-   self.load_products('purchased_items')
+   self.load_products(order=self.item)
+   self.item = Product('id_name')
+   self.order = []
 
   
-  def load_products(self, purchased_items):
-    
-    anvil.server.call("get_purchased_items")
-    items = purchased_items
-
-    if items is not None and len(purchased_items)> 0: 
+  def load_products(self, order):
+     for i in order:
+       anvil.server.call('get_purchased_items'(order=self.item))
+      
+     if order is not None and len(order)> 0: 
       self.empty_purchase_panel.visible = False
-      self.repeating_panel_1.items.purchased_items = []
+       
+      return self.repeating_panel_1.item
      
       
 

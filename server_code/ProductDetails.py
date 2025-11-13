@@ -34,17 +34,17 @@ def add_order(charge_id, cart_items):
     user ['purchased_items'] = user['purchased_items']+ [cart_items]
 
 @anvil.server.callable
-def get_purchased_items():
-   user = anvil.users.get_user()
-   items = orders['order']
-   if user == None:
+def get_purchased_items(orders):
+  user = anvil.users.get_user()
+  user= orders('user_email')
+ 
+  if user == None:
     return []
     
-    if not user['purchased_items']:
-      return []
-      
-    items = []
-    for items in user['purchased_items']:
-      product_info = app_tables.products.get(item_name=items)
-      items.append(product_info)
-    return items
+  for item in orders('order'):
+   item = ({'item_name': ['product']['item_name'], 'quantity':['quantity']})
+   return item
+
+   
+
+   
