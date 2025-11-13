@@ -34,13 +34,9 @@ def add_order(charge_id, cart_items):
     user ['purchased_items'] = user['purchased_items']+ [cart_items]
 
 @anvil.server.callable
-def get_purchased_items(order, user_email):
-  order = app_tables.orders.search(order='item_name', user_email="user")
-  user = tables.app_tables.users.get(email=anvil.users.get_user()['email'])
-  if  user != "user_email":
-    return []
-  if user == "user_email":
-    return order
+def get_purchased_items(order):  
+   item = app_tables.orders.search(order)
+   return orde
    
 
 
