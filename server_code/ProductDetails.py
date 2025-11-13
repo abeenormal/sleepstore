@@ -35,10 +35,9 @@ def add_order(charge_id, cart_items):
 
 @anvil.server.callable
 def get_purchased_items():
- 
-  user = anvil.users.get_user()
-  items = orders['order']
-  if user == None:
+   user = anvil.users.get_user()
+   items = orders['order']
+   if user == None:
     return []
     
     if not user['purchased_items']:
