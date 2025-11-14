@@ -18,7 +18,7 @@ from ..Product import Product
 
 
 class MyPurchases(MyPurchasesTemplate):
-  def __init__(self, user_email, purchase_name, quantity, **properties):
+  def __init__(self, quantity, user_email, purchase_name, **properties):
    
        
     # Set Form properties and Data Bindings.
