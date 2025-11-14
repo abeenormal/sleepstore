@@ -22,10 +22,10 @@ def get_all_products():
 
 
 @anvil.server.callable
-def add_order(charge_id, cart_items):
+def add_order(user_email,charge_id, cart_items, quantity):
   user = app_tables.users.get(email='email')
   app_tables.orders.add_row(user_email=user['email'],charge_id=charge_id,purchase_name=cart_items, quantity='quantity')
-  
+
   if user['purchased_items'] is None:
     user['purchased_items'] = []
 
