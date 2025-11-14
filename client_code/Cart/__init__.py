@@ -18,8 +18,9 @@ class Cart(CartTemplate):
   def __init__(self, items, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.items = items
     self.order = []
+    self.items = items
+   
       
 
     if not self.items:
@@ -38,18 +39,16 @@ class Cart(CartTemplate):
 
   def checkout_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    print(self.items)
-    for i  in self_items:
-      self.items ='purchase_name',
-      self.items.quantity='quantity'
+    for i in self.items:
+      self.order.append({'purchase_name':i['product']['name'], 'quantity':i['quantity']})
     try:
-      charge = stripe.checkout.charge(amount=self.total*100, currency="USD")
+       charge = stripe.checkout.charge(amount=self.total*100, currency="USD")
   
     except:
       return
 
-      anvil.server.call('add_order', (email,charge_id, cart_items))
-      app_tables.orders.add_row(charge_id='charge_id', email= 'user_email', items='cart_items', quantity= 'quantity')
+      anvil.server.call('add_order', charge['charge_id'], self.order)
+      app_tables.orders.add_row(email= 'user_email',charge_id='charge_id',purchase_name=self.items , quantity= 'quantity')
       #   charge_id=charge_id,
       #   email=user_email,
       #   items=cart_items,
