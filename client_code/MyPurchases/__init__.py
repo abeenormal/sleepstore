@@ -24,11 +24,11 @@ class MyPurchases(MyPurchasesTemplate):
     # Set Form properties and Data Bindings.
     self.email_name_label = user_email
     self.purchase_label = purchase_name
-    se
-   self.init_components(**properties)
-   self.item = order
-   order = []
-   self.load_products(order)
+    self.quantity_label = quantity
+    
+    self.init_components(**properties)
+ 
+    self.load_products(user_email)
   
     
   

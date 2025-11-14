@@ -38,8 +38,8 @@ class Cart(CartTemplate):
 
   def checkout_button_click(self, **event_args):
     """This method is called when the button is clicked"""  
-    for i in self.items:
-      self.order.append({'item_name':i['product']['item_name'], 'quantity':i['quantity']})
+    for cart_items in self.items:
+      cart_items =
     try:
       charge = stripe.checkout.charge(amount=self.total*100, currency="USD")
   
