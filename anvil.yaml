@@ -34,6 +34,24 @@ db_schema:
       type: string
     server: full
     title: Products
+  purchases:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: email
+      target: users
+      type: link_single
+    - admin_ui: {order: 1, width: 200}
+      name: product-name
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: quantity
+      type: number
+    - admin_ui: {order: 3, width: 200}
+      name: price
+      type: number
+    server: full
+    title: Purchases
   users:
     client: none
     columns:

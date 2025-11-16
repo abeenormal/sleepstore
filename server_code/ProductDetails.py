@@ -25,24 +25,15 @@ def get_all_products():
 def add_order(charge_id, cart_items):
    user = app_tables.users.get(email='email')
    app_tables.orders.add_row(user_email=user['email'],charge_id=charge_id,cart_items='purchase_name')
+   for i in cart_items:
+     return
+     app_tables.purchases.add_row(email = user['email'], product_name=cart_items['product_name'], quantity = "quantity")
 
-   if user['purchased_items'] is None:
-      user['purchased_items'] = []
-
-   if cart_items in user['purchased_items']:
-      return
-      user ['purchased_items'] = user['purchased_items']+ [cart_items]
+  
 
 @anvil.server.callable
-def get_purchased_items(email, purchased_items):  
-   user=anvil.users.get_user()
-   purchased_items = items
-   if not user: # no user is logged in
-      return []
-     
-   if user:
-    print() 
-    return app_tables.users.search(purchased_items='items')
+def get_purchased_items(user):  
+    return app_tables.purchases.search(email=user)
    
 
 

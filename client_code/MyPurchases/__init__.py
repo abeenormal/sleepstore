@@ -29,14 +29,15 @@ class MyPurchases(MyPurchasesTemplate):
   
     
   
-  def load_products(self, email, purchased_items):
-   anvil.server.call('get_purchased_items', email, purchased_items)
-   print(purchased_items)
-   if purchased_items == None:
-    self.purchase_panel.visible = False
-    self.purchase_panel.visible = True
- 
-    self.repeating_panel_1.items = purchased_items
+  def load_products(self, items):
+    user = anvil.users.get(user)
+    anvil.server.call('get_purchased_items', email=user)
+     
+    if  user:
+     self.purchase_panel.visible = False
+     self.purchase_panel.visible = True  
+    
+     self.repeating_panel_1.items = self.items
     
    
         

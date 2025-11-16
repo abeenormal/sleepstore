@@ -1,12 +1,26 @@
 components:
-- data_bindings:
-  - {code: 'self.item[''purchased_items'']', property: content, writeback: false}
+- components: []
+  data_bindings:
+  - {code: 'self.item[''product_name'']', property: content, writeback: false}
   layout_properties: {grid_position: 'EYYHFN,WMCTUU'}
   name: purchases_label
-  properties: {font_size: 18}
+  properties: {align: center, font_size: 18}
   type: RichText
+- data_bindings:
+  - {code: 'self.item[''quantity'']', property: text, writeback: false}
+  layout_properties: {grid_position: 'GZKCUV,HXQXLL'}
+  name: quantity
+  properties: {align: center}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''price'']', property: text, writeback: false}
+  layout_properties: {grid_position: 'BZEVMS,AKRJYN'}
+  name: price_label
+  properties: {align: center}
+  type: Label
 container:
   data_bindings: []
   event_bindings: {}
   type: ColumnPanel
 is_package: true
+item_type: {table_id: 1028052}
