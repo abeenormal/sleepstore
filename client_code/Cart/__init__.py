@@ -44,7 +44,7 @@ class Cart(CartTemplate):
         i['quantity'] += quantity
         break
     else:
-      self.order.append({'purchase_name':i['product']['name'], 'quantity':i['quantity']})
+      self.order.append({'name':i['product']['name'], 'quantity':i['quantity']})
     try:
        charge = stripe.checkout.charge(amount=self.total*100, currency="USD")
   
