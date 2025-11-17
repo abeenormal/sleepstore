@@ -58,5 +58,5 @@ class Cart(CartTemplate):
     Notification("Your order has been received!").show()
     
    
-app_tables.orders.add_row(charge_id=charge_id, order=cart_items)
+
  

@@ -1,14 +1,5 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'NVEFYC,IOZWIO'}
-    name: empty_cart_label
-    properties: {align: center, font_size: 22, text: There are no items in your cart.}
-    type: Label
-  - event_bindings: {click: shop_button_click}
-    layout_properties: {grid_position: 'BWUZLD,IHFNJL'}
-    name: shop_button
-    properties: {font_size: 20, role: filled-button, text: Shop Now!}
-    type: Button
   - layout_properties: {grid_position: 'QMWQOX,ZJNQCY'}
     name: spacer_1
     properties: {height: 50.79998779296875}
@@ -18,32 +9,11 @@ components:
   properties: {visible: true}
   type: ColumnPanel
 - components:
-  - layout_properties: {grid_position: 'JQKIPR,ZHAEAL KOFRZH,YVOXYV'}
-    name: label_1
-    properties: {align: center, bold: true, font: Yeseva One, font_size: 24, italic: true, text: My Cart}
-    type: Label
   - data_bindings: []
     layout_properties: {full_width_row: false, grid_position: 'JQKIPR,ZHAEAL IDYDEP,DBEFBG'}
     name: repeating_panel_1
-    properties: {item_template: Cart.ItemTemplate1}
+    properties: {item_template: MyPurchases.ItemTemplate2}
     type: RepeatingPanel
-  - layout_properties: {grid_position: 'JQKIPR,JCWVHB AONQIO,NGGTVS'}
-    name: label_2
-    properties: {align: center, font_size: 22, text: Order Summary, underline: true}
-    type: Label
-  - layout_properties: {grid_position: 'JQKIPR,JCWVHB USQKYU,WCBMVE'}
-    name: label_3
-    properties: {align: center, font_size: 22, italic: true, text: 'Total:', underline: false}
-    type: Label
-  - layout_properties: {grid_position: 'JQKIPR,JCWVHB EUPSBR,LTISLY'}
-    name: total_label
-    properties: {align: center, font_size: 22, underline: true}
-    type: Label
-  - event_bindings: {click: checkout_button_click}
-    layout_properties: {grid_position: 'JQKIPR,JCWVHB VABTMB,ZGSZNU'}
-    name: checkout_button
-    properties: {icon: 'fa:lock', role: filled-button, text: Checkout}
-    type: Button
   layout_properties: {full_width_row: true, grid_position: 'SGYQRR,GVUVXD'}
   name: column_panel_1
   properties: {col_widths: '{}'}

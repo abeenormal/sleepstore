@@ -24,6 +24,7 @@ class MyPurchases(MyPurchasesTemplate):
        
     # Set Form properties and Data Bindings.   
     self.init_components(**properties)
+    
     self.items = purchased_items
     self.load_products(purchased_items)
   
