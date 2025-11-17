@@ -22,7 +22,7 @@ def get_all_products():
 
 
 @anvil.server.callable
-def add_order(charge_id, cart_items):
+def add_order(charge_id, order):
   app_tables.orders.add_row(email='user_email',charge_id='charge_id', order='cart_items')
 
 
