@@ -39,12 +39,9 @@ class Cart(CartTemplate):
 
   def checkout_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    for i in self.items:
-      if i['product'] == product:
-        i['quantity'] += quantity
-        break
-      else:
-         self.order.append({'name':i['product']['name'], 'quantity':i['quantity']})
+    for i in self.items: 
+     
+      self.order.append({'purchase_name':i['product']['item_name'], 'quantity':i['quantity']})
     try:
        charge = stripe.checkout.charge(amount=self.total*100, currency="USD")
   
@@ -52,7 +49,8 @@ class Cart(CartTemplate):
        return
 
        anvil.server.call('add_order', charge['charge_id'], self.order)
-       app_tables.orders.add_row(email= 'user_email',charge_id='charge_id',purchase_name=self.items , quantity= 'quantity')
+       anvil.server.call('add_to_purchases')
+      
      
 
     get_open_form().cart_items = []

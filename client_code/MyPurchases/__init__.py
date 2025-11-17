@@ -20,23 +20,23 @@ from ..Product import Product
 
 class MyPurchases(MyPurchasesTemplate):
   def __init__(self, email, purchased_items, **properties):
-    self.items = anvil.app.tables.users.get(purchased_items)
+  
        
     # Set Form properties and Data Bindings.   
     self.init_components(**properties)
     self.items = purchased_items
-    self.load_products(email, purchased_items)
+    self.load_products(purchased_items)
   
     
   
-  def load_products(self, items):
-    user = anvil.users.get(user)
-    anvil.server.call('get_purchased_items', email=user)
-     
+  def load_products(self, purchased_items):
+    user = anvil.users.get_user()
+         
     if  user:
      self.purchase_panel.visible = False
-     self.purchase_panel.visible = True  
-    
+     self.purchase_panel.visible = True 
+
+     anvil.server.call('get_purchased_items')    
      self.repeating_panel_1.items = self.items
     
    

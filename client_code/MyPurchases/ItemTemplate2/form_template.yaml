@@ -1,19 +1,25 @@
 components:
+- data_bindings:
+  - {code: 'self.item[''user_email'']', property: text, writeback: false}
+  layout_properties: {grid_position: 'GVSNBW,RCBCUK'}
+  name: label_1
+  properties: {align: center}
+  type: Label
 - components: []
   data_bindings:
-  - {code: 'self.item[''product_name'']', property: content, writeback: false}
+  - {code: 'self.item[''item_name'']', property: content, writeback: false}
   layout_properties: {grid_position: 'EYYHFN,WMCTUU'}
   name: purchases_label
   properties: {align: center, font_size: 18}
   type: RichText
 - data_bindings:
-  - {code: 'self.item[''quantity'']', property: text, writeback: false}
+  - {code: 'f"qty. {self.item[''quantity'']}"', property: text, writeback: false}
   layout_properties: {grid_position: 'GZKCUV,HXQXLL'}
   name: quantity
-  properties: {align: center}
+  properties: {align: center, text: ''}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''price'']', property: text, writeback: false}
+  - {code: 'f"${self.item[''product''][''price'']} USD"', property: text, writeback: false}
   layout_properties: {grid_position: 'BZEVMS,AKRJYN'}
   name: price_label
   properties: {align: center}

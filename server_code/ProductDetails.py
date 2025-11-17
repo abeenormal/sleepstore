@@ -23,17 +23,18 @@ def get_all_products():
 
 @anvil.server.callable
 def add_order(charge_id, cart_items):
-   user = app_tables.users.get(email='email')
-   app_tables.orders.add_row(user_email=user['email'],charge_id=charge_id,cart_items='purchase_name')
-   for i in cart_items:
-     return
-     app_tables.purchases.add_row(email = user['email'], product_name=cart_items['product_name'], quantity = "quantity")
+  app_tables.orders.add_row(email='user_email',charge_id='charge_id', purchase_name='cart_items')
+
+
+@anvil.server.callable
+def add_to_purchases():
+  app_tables.purchases.add_row(email='user_email', price='item_price', purchase_name='item_name', quantity = "quantity")
 
   
 
 @anvil.server.callable
-def get_purchased_items(user):  
-    return app_tables.purchases.search(email=user)
+def get_purchased_items():
+  return app_tables.purchases.search()
    
 
 
