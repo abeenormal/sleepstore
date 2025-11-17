@@ -41,7 +41,7 @@ class Cart(CartTemplate):
     """This method is called when the button is clicked"""
     for i in self.items: 
      
-      self.order.append({'purchase_name':i['product']['item_name'], 'quantity':i['quantity']})
+      self.order.append({'order':i['product']['item_name'], 'quantity':i['quantity']})
     try:
        charge = stripe.checkout.charge(amount=self.total*100, currency="USD")
   
