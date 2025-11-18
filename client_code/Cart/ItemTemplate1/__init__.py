@@ -14,6 +14,7 @@ class ItemTemplate1(ItemTemplate1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.total_label.text = f"${self.item['product']['price'] * self.item['quantity']}"
 
   
   def delete_button_click(self, **event_args):

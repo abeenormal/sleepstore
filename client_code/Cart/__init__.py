@@ -31,7 +31,7 @@ class Cart(CartTemplate):
  
     self.total = sum(item['product']['price'] * item['quantity'] for item in self.items)
     # Any code you write here will run before the form opens.
-    self.total_label.text = f"${self.total:.02f}"
+  
 
   def shop_button_click(self, **event_args):
     """This method is called when the button is clicked"""
