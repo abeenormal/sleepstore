@@ -12,7 +12,7 @@ components:
   - data_bindings: []
     layout_properties: {full_width_row: false, grid_position: 'JQKIPR,ZHAEAL IDYDEP,DBEFBG'}
     name: repeating_panel_1
-    properties: {item_template: MyPurchases.ItemTemplate2}
+    properties: {item_template: Cart.ItemTemplate1}
     type: RepeatingPanel
   layout_properties: {full_width_row: true, grid_position: 'SGYQRR,GVUVXD'}
   name: column_panel_1
