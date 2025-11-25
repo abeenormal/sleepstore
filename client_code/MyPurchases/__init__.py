@@ -28,16 +28,24 @@ class MyPurchases(MyPurchasesTemplate):
    self.order = []
 
   
-  def load_products(self, order):
-     for i in order:
-       anvil.server.call('get_purchased_items'(order=self.item))
-      
-     if order is not None and len(order)> 0: 
-      self.empty_purchase_panel.visible = False
+  def load_products(self,):
+    anvil.server.call('get_purchased_items'(user_email)
+      if purchased_items == None
+        return
+      self.empty_purchase_panel.visible = True
+        break
+    else
        
       return self.repeating_panel_1.item
      
-      
+  self.items = items
+  self.order = []
+
+
+if not self.items:
+  
+
+  self.repeating_panel_1.items = self.items    
 
 
 
