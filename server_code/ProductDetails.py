@@ -32,9 +32,14 @@ def add_purchase(cart_items,email):
     
 
 @anvil.server.callable
-def add_order(charge_id,cart_items, email):
-  email = anvil.users.get_user(email)
-  return app_tables.orders.add_row(email='user_email',charge_id='charge_id', order='cart_items')
+def add_order(charge_id,cart_items):
+  user = anvil.users.get_user()
+
+  if user:
+    
+   return app_tables.orders.add_row(email=user,charge_id=charge_id, order=cart_items)
+  else:
+    return "Please sign-in!"
 
 
 @anvil.server.callable
