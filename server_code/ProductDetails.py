@@ -22,21 +22,32 @@ def get_all_products():
 
 
 @anvil.server.callable
-def add_order(charge_id, cart_items):
+def add_purchase(charge_id, cart_items):
   user = tables.app_tables.users.get(email=anvil.users.get_user()['email'])
-  app_tables.orders.add_row(user_email=user['email'],charge_id=charge_id,order=cart_items)
+  cart_items = purchased_items
   user = anvil.users.get_user()
   if user['purchased_items'] is None:
     user['purchased_items'] = []
 
-    if cart_items in user['purchased_items']:
+    for i in purchased_items:
+      user ['purchased_items'] = user['purchased_items']+ [cart_items]
       return
-    user ['purchased_items'] = user['purchased_items']+ [cart_items]
+      app_tables.purchases.add_row(quantity= quantity, purchase_name= ['item_name'], user_email= email)
+    
 
+    return app_tables.orders.add_row(user_email=user['email'],charge_id=charge_id,order=cart_items)
+
+
+@anvil.server.callable
+def add_order(charge_id,cart_items):
+ user = tables.app_tables.users.get(email=anvil.users.get_user()['email']) 
+ items= cart_iems
+if cart_items == None:
+  cart_items = []
 @anvil.server.callable
 def get_purchased_items(orders):
   user = anvil.users.get_user()
-  user= orders('user_email')
+  user= 
  
   if user == None:
     return []
