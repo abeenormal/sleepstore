@@ -1,15 +1,21 @@
 components:
 - data_bindings:
-  - {code: 'self.item[quantity]', property: text, writeback: false}
-  layout_properties: {grid_position: 'VCKEHQ,RGIVYY'}
-  name: label_1
+  - {code: 'self.item[''purchase_name'']', property: text, writeback: false}
+  layout_properties: {grid_position: 'KQJEFZ,CNUHLP'}
+  name: label_2
   properties: {}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''id_name'']', property: text, writeback: false}
-  layout_properties: {grid_position: 'VCKEHQ,LQLPOY'}
-  name: label_2
-  properties: {}
+  - {code: 'self.item[quantity]', property: text, writeback: false}
+  layout_properties: {grid_position: 'KQJEFZ,LPSIPT '}
+  name: label_1
+  properties: {align: right}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''price'']', property: text, writeback: false}
+  layout_properties: {grid_position: 'KQJEFZ,LPSIPT JFUISS,DVSTDL'}
+  name: label_3
+  properties: {align: right}
   type: Label
 container: {type: ColumnPanel}
 is_package: true

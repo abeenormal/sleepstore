@@ -11,6 +11,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..OurProducts import OurProducts
 from ..Product import Product
+from ..Cart import Cart
 
 
 
@@ -23,29 +24,28 @@ class MyPurchases(MyPurchasesTemplate):
        
     # Set Form properties and Data Bindings.
    self.init_components(**properties)
-   self.load_products(order=self.item)
+   self.load_products('purchased_items', 'user_email')
    self.item = Product('id_name')
-   self.order = []
-
   
-  def load_products(self,):
-    anvil.server.call('get_purchased_items'(user_email)
-      if purchased_items == None
-        return
-      self.empty_purchase_panel.visible = True
-        break
-    else
-       
-      return self.repeating_panel_1.item
+  def load_products(self, purchased_items, user_email):
      
-  self.items = items
-  self.order = []
+     anvil.server.call('get_purchased_items', 'user_email')
+     if purchased_items == None:
+      self.empty_purchase_panel.visible = True
+      self.purchase_panel.visible= False
+     else:   
+       self.repeating_panel_1.items= self.items
+
+       def shop_click(self, **event_args):
+         """This method is called when the button is clicked"""
+         self.navigate(self.ourproducts, OurProducts())
 
 
-if not self.items:
+    
+     
   
 
-  self.repeating_panel_1.items = self.items    
+  
 
 
 
@@ -54,10 +54,6 @@ if not self.items:
 
 
       
-  def shop_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.navigate(self.ourproducts, OurProducts())
-
   
    
 
