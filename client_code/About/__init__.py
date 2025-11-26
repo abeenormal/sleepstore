@@ -13,11 +13,15 @@ from ..Footer import Footer
 from anvil.js import window
 
 
+
+
+
 class About(AboutTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-  
+
+   
    
     
 

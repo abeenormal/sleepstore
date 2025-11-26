@@ -16,6 +16,6 @@ from ..Cart import Cart
 # This is a module.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
 
-urls = {"home": Home, "ourproducts": OurProducts, "my-purchases": MyPurchases, "about": About, "cart": Cart, }
+urls = {"home": Home, "ourproducts": OurProducts, "my_purchases": MyPurchases, "about": About, "cart": Cart, }
 
 
