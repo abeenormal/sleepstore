@@ -19,7 +19,7 @@ class Cart(CartTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.items = items
-    self.order = []  
+    self.order = [] 
    
     if not self.items:
       self.empty_cart_panel.visible = True

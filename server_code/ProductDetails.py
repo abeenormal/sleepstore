@@ -20,7 +20,6 @@ def get_all_products():
   return app_tables.products.client_readable()
 
 @anvil.server.callable
-
 def add_order(charge_id, cart_items):
   """
     Adds a new order and its line items to the database.
@@ -37,14 +36,14 @@ def add_order(charge_id, cart_items):
 def add_to_purchases(cart_items):   
   # Prepare line item rows for the 'purchases' table
   user=anvil.users.get_user()
-if not user:
-  raise Exception("User not logged in.")
+  if not user:
+    raise Exception("User not logged in.")
 
   item = cart_items
-rows_to_add = []
+  rows_to_add = []
 
-for item in cart_items:
-  rows_to_add.append({
+  for item in cart_items:
+    rows_to_add.append({
     'purchase_name': item['product']['item_name'],
     'quantity': item['quantity'],
     'email': user,  # Store the user object for a table link
@@ -58,8 +57,8 @@ for item in cart_items:
 
 
 @anvil.server.callable
-def get_orders(email):
-  return app_tables.purchases.search(email=email)
+def get_orders():
+  return app_tables.purchases.search()
 
 
 
