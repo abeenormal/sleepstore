@@ -19,9 +19,8 @@ class Cart(CartTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.items = items
-    self.order = []
-      
-
+    self.order = []  
+   
     if not self.items:
       self.empty_cart_panel.visible = True
       self.column_panel_1.visible = False
@@ -37,17 +36,20 @@ class Cart(CartTemplate):
     get_open_form().Shop_link()
 
   def checkout_button_click(self, **event_args):
-    """This method is called when the button is clicked"""  
+    """This method is called when the button is clicked""" 
+    
     for i in self.items:
+      
       self.order.append({'item_name':i['product']['item_name'], 'quantity':i['quantity']})
     try:
+  
+      anvil.server.call('add_order', charge['charge_id'],self.order )
+    
+      
+    except:
       charge = stripe.checkout.charge(amount=self.total*100, currency="USD")
   
-    except:
-      return
-
-    anvil.server.call('add_order',charge['charge_id'], self.order, email)
-
+    
     get_open_form().cart_items = []
     get_open_form().cart_click()
     Notification("Your order has been received!").show()

@@ -22,24 +22,31 @@ def get_all_products():
 
 
 @anvil.server.callable
-def add_purchase(cart_items,email):
-  email = anvil.users.get_user(email)
-  purchased_items = cart_items
-  for i in purchased_items:
-    purchased_items = [purchased_items] + [cart_items]
-    return
-  app_tables.purchases.add_row(quantity= ['item_quantity'], purchase_name= ['item_name'], user_email= 'email')
+def add_purchase(items):
+  rows_to_add = []
+  for items in self.items:
+    rows_to_add.append({
+      'purchase_name': item['item_name'],
+      'quantity': item['item_quantity'],
+      'user_email': user,
+      'total': item['item_price']
+    })
+  
+  app_tables.purchases.add_rows(rows_to_add)
     
 
 @anvil.server.callable
-def add_order(charge_id,cart_items,):
-  email = anvil.users.get_user(email)
-  return app_tables.orders.add_row(email='user_email',charge_id='charge_id', order='cart_items')
+def add_order(charge_id,cart_items):
+  user = anvil.users.get_user()
+  if user:
+    return app_tables.orders.add_row(email=user,charge_id=charge_id, order=cart_items)
+  else:
+    raise anvil.users.AuthenticationFailed("No user is logged in")
 
 
 @anvil.server.callable
-def get_purchased_items(user_email):
- return app_tables.purchases.search(user_email) 
+def get_purchased_items():
+ return app_tables.purchases.search() 
  
  
    

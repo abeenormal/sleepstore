@@ -9,8 +9,8 @@ db_schema:
     - admin_ui: {order: 2, width: 927}
       name: order
       type: simpleObject
-    - admin_ui: {order: -2, width: 200}
-      name: user_email
+    - admin_ui: {width: 200}
+      name: email
       type: string
     server: full
     title: orders
@@ -34,8 +34,8 @@ db_schema:
   purchases:
     client: none
     columns:
-    - admin_ui: {width: 200}
-      name: user_email
+    - admin_ui: {order: 0, width: 200}
+      name: email
       type: string
     - admin_ui: {width: 200}
       name: purchase_name
@@ -44,7 +44,7 @@ db_schema:
       name: quantity
       type: string
     - admin_ui: {width: 200}
-      name: price
+      name: total
       type: number
     server: full
     title: Purchases
