@@ -31,33 +31,29 @@ def add_order(charge_id, cart_items):
     raise Exception("User not logged in.")
 
     # Add a single row to the 'orders' table
-    app_tables.orders.add_row(
-      email=user['email'],
-      charge_id=charge_id,
-      order=cart_items
-    )
+  app_tables.orders.add_row(email=user['email'],charge_id=charge_id, order=cart_items)
 
 @anvil.server.callable
 def add_to_purchases(cart_items):   
   # Prepare line item rows for the 'purchases' table
   user=anvil.users.get_user()
-  if not user:
-    raise Exception("User not logged in.")
-    
+if not user:
+  raise Exception("User not logged in.")
+
   item = cart_items
-  rows_to_add = []
-  
-  for item in cart_items:
-   rows_to_add.append({
+rows_to_add = []
+
+for item in cart_items:
+  rows_to_add.append({
     'purchase_name': item['product']['item_name'],
     'quantity': item['quantity'],
     'email': user,  # Store the user object for a table link
     'total': item['product']['price']
-   })
-  
+  })
+
 
   # Add all line item rows to the 'purchases' table  
-   item = app_tables.purchases.add_rows(rows_to_add)
+  item = app_tables.purchases.add_rows(rows_to_add)
 
 
 
