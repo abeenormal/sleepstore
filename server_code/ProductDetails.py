@@ -39,29 +39,32 @@ def add_order(charge_id, cart_items):
 
 @anvil.server.callable
 def add_to_purchases(cart_items):   
-    # Prepare line item rows for the 'purchases' table
+  # Prepare line item rows for the 'purchases' table
   user=anvil.users.get_user()
   if not user:
-     raise Exception("User not logged in.")
+    raise Exception("User not logged in.")
     
+  item = cart_items
   rows_to_add = []
+  
   for item in cart_items:
    rows_to_add.append({
-        'purchase_name': item['product']['item_name'],
-        'quantity': item['quantity'],
-        'email': user,  # Store the user object for a table link
-        'total': item['product']['price']
-      })
+    'purchase_name': item['product']['item_name'],
+    'quantity': item['quantity'],
+    'email': user,  # Store the user object for a table link
+    'total': item['product']['price']
+   })
+  
 
-      # Add all line item rows to the 'purchases' table  
-  app_tables.purchases.add_rows(rows_to_add)
- 
+  # Add all line item rows to the 'purchases' table  
+   item = app_tables.purchases.add_rows(rows_to_add)
 
 
 
-def get_orders(user_email):
-  return app_tables.orders.search(q.equal('email', user_email))
- 
-def get_purchases()  
+@anvil.server.callable
+def get_orders(email):
+  return app_tables.purchases.search(email=email)
 
-   
+
+
+

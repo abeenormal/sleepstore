@@ -19,24 +19,25 @@ from ..Cart import Cart
 
 
 class MyPurchases(MyPurchasesTemplate):
-  def __init__(self, purchased_items, **properties):
+  def __init__(self, items, **properties):
    
        
     # Set Form properties and Data Bindings.
    self.init_components(**properties)
     
-   self.load_products('purchased_items')
+   self.load_products('email','orders')
 
   
-  def load_products(self,orders):
-    anvil.users.get_user('email')
-    anvil.server.call('get_orders',user_email)
+  def load_products(self,email,order):
+    email = anvil.users.get_user()['email']
+    anvil.server.call('get_orders', email)
+  
     
-    if user_email == None:
+    if email == None:
       self.empty_purchase_panel.visible = True
       self.purchase_panel.visible= False
       
-    self.repeating_panel_1.items= orders
+    self.repeating_panel_1.items= self.items
 
   def shop_click(self, **event_args):
    """This method is called when the button is clicked"""
