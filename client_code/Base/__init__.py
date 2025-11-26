@@ -54,7 +54,7 @@ class Base(BaseTemplate):
 
       
   def navigate(self, active_link, form):
-    for i in [self.OurProducts, self.about_us, self.cart, self.home]:
+    for i in [self.OurProducts, self.about_us, self.cart, self.home, self.my_purchases]:
      self.content_panel.clear()
     self.content_panel.add_component(form, full_width_row=True)
       
@@ -89,8 +89,7 @@ class Base(BaseTemplate):
 
   def my_purchases_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.content_panel.clear()
-    open_form(MyPurchases())
+    self.navigate(self.my_purchases, MyPurchases())  
     
    
 
@@ -128,6 +127,8 @@ class Base(BaseTemplate):
 
   def Shop_link(self, **event_args):
     self.navigate(self.OurProducts, OurProducts())
+
+  
     
   
   

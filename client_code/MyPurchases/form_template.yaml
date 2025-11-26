@@ -1,13 +1,8 @@
 components:
 - layout_properties: {grid_position: 'TNGHFY,VFNDHG'}
   name: purchases_label
-  properties: {align: center, font_size: 20, text: My Purchases}
+  properties: {align: center, bold: true, font_size: 20, italic: true, text: My Purchases}
   type: Label
-- event_bindings: {click: home_link_click}
-  layout_properties: {grid_position: 'TNGHFY,AUFZXN'}
-  name: home_link
-  properties: {align: right, font_size: 20, icon: 'fa:home', role: null, text: Back to Home Page}
-  type: Link
 - components:
   - layout_properties: {grid_position: 'UFYTIT,UDOCPD'}
     name: no_purchases_label

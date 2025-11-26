@@ -12,6 +12,7 @@ from anvil.tables import app_tables
 from ..OurProducts import OurProducts
 from ..Product import Product
 from ..Cart import Cart
+from ..Home import Home
 
 
 
@@ -39,9 +40,8 @@ class MyPurchases(MyPurchasesTemplate):
     self.navigate(self.ourproducts, OurProducts())
 
  
-  def home_link_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    self.navigate(go_to_home()
+
+
    
 
 

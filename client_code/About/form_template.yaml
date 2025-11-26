@@ -34,10 +34,30 @@ components:
   name: column_panel_1
   properties: {role: null}
   type: ColumnPanel
-- layout_properties: {grid_position: 'BODEMY,ALVMUU'}
-  name: image_3
+- components:
+  - layout_properties: {grid_position: 'VKSAVO,ORDNBL'}
+    name: label_2
+    properties: {align: center, bold: true, font_size: 20, foreground: 'theme:Primary', text: Check out these Resouces for Healthy Sleep!}
+    type: Label
+  - event_bindings: {click: link_1_click}
+    layout_properties: {grid_position: 'SCJJUZ,TDDQZG'}
+    name: link_1
+    properties: {align: center, bold: true, font_size: 20, italic: true, text: Healthy Sleep Habits, url: 'https://www.nhlbi.nih.gov/health/sleep-deprivation/healthy-sleep-habits'}
+    type: Link
+  - event_bindings: {click: link_2_click}
+    layout_properties: {grid_position: 'SCJJUZ,LZLVOM'}
+    name: link_2
+    properties: {align: center, bold: true, font_size: 20, italic: true, text: Sleep Apnea Signs and Symptons, url: 'https://www.mayoclinic.org/diseases-conditions/sleep-apnea/symptoms-causes/syc-20377631'}
+    type: Link
+  - event_bindings: {click: link_3_click}
+    layout_properties: {grid_position: 'SCJJUZ,RYXDOI'}
+    name: link_3
+    properties: {align: center, bold: true, font_size: 18, foreground: 'theme:Primary', italic: true, text: How CPAP Machines Work, url: 'https://my.clevelandclinic.org/health/treatments/22043-cpap-machine'}
+    type: Link
+  layout_properties: {grid_position: 'AKDTWI,QJEDZG'}
+  name: column_panel_2
   properties: {}
-  type: Image
+  type: ColumnPanel
 - layout_properties: {grid_position: 'KPBFZW,FCZFMR'}
   name: footer_1
   properties: {}
