@@ -42,7 +42,13 @@ class Base(BaseTemplate):
     else:                       
       self.cart_items.append({'product': product, 'quantity': quantity})
 
+ 
 
+  def add_purchase(self, cart_items):
+    user = anvil.users.get_user()
+    if user:
+     anvil.server.call('add_purchase', cart_items)
+   
  
       
 

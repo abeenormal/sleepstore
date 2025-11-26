@@ -19,7 +19,7 @@ from ..Cart import Cart
 
 
 class MyPurchases(MyPurchasesTemplate):
-  def __init__(self, item, **properties):
+  def __init__(self, purchased_items, **properties):
    
        
     # Set Form properties and Data Bindings.
@@ -32,8 +32,8 @@ class MyPurchases(MyPurchasesTemplate):
     if purchased_items == None:
       self.empty_purchase_panel.visible = True
       self.purchase_panel.visible= False
-    else:   
-       self.repeating_panel_1.items= self.items
+      
+    self.repeating_panel_1.items= purchased_items
 
   def shop_click(self, **event_args):
    """This method is called when the button is clicked"""

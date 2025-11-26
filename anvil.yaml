@@ -41,10 +41,11 @@ db_schema:
       name: purchase_name
       type: string
     - admin_ui: {width: 200}
-      name: quantity
-      type: string
-    - admin_ui: {width: 200}
       name: total
+      type: number
+    - {admin_ui: null, name: email, target: users, type: link_single}
+    - admin_ui: {width: 200}
+      name: quantity
       type: number
     server: full
     title: Purchases
@@ -97,8 +98,8 @@ runtime_options:
   server_version: python3-sandbox
   version: 2
 services:
-- client_config: {}
-  server_config: {}
+- client_config: {enable_v2: true}
+  server_config: {auto_create_missing_columns: true}
   source: /runtime/services/tables.yml
 - client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 30, require_secure_passwords: true, use_email: true, use_facebook: true, use_google: true}
   server_config: {user_table: users}
