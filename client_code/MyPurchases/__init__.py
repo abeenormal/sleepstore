@@ -19,42 +19,53 @@ from ..Cart import Cart
 
 
 class MyPurchases(MyPurchasesTemplate):
-  def __init__(self, purchased_items, **properties):
-   
-       
-    # Set Form properties and Data Bindings.
-   self.init_components(**properties)
-   self.load_products('purchased_items')
+  def __init__(self, **properties):
 
-  
-  def load_products(self, purchased_items):
-    anvil.server.call('get_purchased_items')
-    if purchased_items == None:
-      self.empty_purchase_panel.visible = True
-      self.purchase_panel.visible= False
-      
-    self.repeating_panel_1.items= purchased_items
+
+    # Set Form properties and Data Bindings.
+    self.init_components(**properties)
+    self.load_products('items')
+
+
+  def load_products(self,items):
+    self.items = anvil.server.call('get_orders')
+    if not self.items:
+       self.empty_purchase_panel.visible = True
+       self.purchase_panel.visible= False
+    self.repeating_panel_1.items= self.items
 
   def shop_click(self, **event_args):
-   """This method is called when the button is clicked"""
-   self.navigate(self.ourproducts, OurProducts())
+    """This method is called when the button is clicked"""
+    self.navigate(self.ourproducts, OurProducts())
 
-
-    
-     
-  
-
-  
-
-
-
-
-    
-
-
-      
-  
+ 
+  def home_link_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.navigate(go_to_home()
    
 
-   
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
