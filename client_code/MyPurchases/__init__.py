@@ -19,7 +19,7 @@ from ..Cart import Cart
 
 
 class MyPurchases(MyPurchasesTemplate):
-  def __init__(self, self_item, **properties):
+  def __init__(self, item, **properties):
    
        
     # Set Form properties and Data Bindings.
