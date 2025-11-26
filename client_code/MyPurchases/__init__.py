@@ -29,6 +29,7 @@ class MyPurchases(MyPurchasesTemplate):
 
   
   def load_products(self,orders):
+    anvil.users.get_user('email')
     anvil.server.call('get_orders',user_email)
     
     if user_email == None:
