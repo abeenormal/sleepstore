@@ -90,7 +90,7 @@ class Base(BaseTemplate):
   def my_purchases_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    open_form(MyPurchases(self.item))
+    open_form(MyPurchases(items='purchased_items'))
     
    
 

@@ -34,9 +34,6 @@ db_schema:
   purchases:
     client: none
     columns:
-    - admin_ui: {order: 0, width: 200}
-      name: user_email
-      type: string
     - admin_ui: {width: 200}
       name: purchase_name
       type: string

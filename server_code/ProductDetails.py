@@ -48,7 +48,7 @@ def add_to_purchases(cart_items):
   for item in cart_items:
    rows_to_add.append({
         'purchase_name': item['product']['item_name'],
-        'quantity': "",
+        'quantity': item['quantity'],
         'email': user,  # Store the user object for a table link
         'total': item['product']['price']
       })
@@ -57,11 +57,11 @@ def add_to_purchases(cart_items):
   app_tables.purchases.add_rows(rows_to_add)
  
 
-@anvil.server.callable
-def get_purchased_items():
- return app_tables.purchases.search() 
+
+
+def get_orders(user_email):
+  return app_tables.orders.search(q.equal('email', user_email))
  
- 
-   
+def get_purchases()  
 
    

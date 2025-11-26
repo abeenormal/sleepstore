@@ -24,16 +24,18 @@ class MyPurchases(MyPurchasesTemplate):
        
     # Set Form properties and Data Bindings.
    self.init_components(**properties)
+    
    self.load_products('purchased_items')
 
   
-  def load_products(self, purchased_items):
-    anvil.server.call('get_purchased_items')
-    if purchased_items == None:
+  def load_products(self,orders):
+    anvil.server.call('get_orders',user_email)
+    
+    if user_email == None:
       self.empty_purchase_panel.visible = True
       self.purchase_panel.visible= False
       
-    self.repeating_panel_1.items= purchased_items
+    self.repeating_panel_1.items= orders
 
   def shop_click(self, **event_args):
    """This method is called when the button is clicked"""
