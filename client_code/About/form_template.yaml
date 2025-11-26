@@ -34,6 +34,10 @@ components:
   name: column_panel_1
   properties: {role: null}
   type: ColumnPanel
+- layout_properties: {grid_position: 'BODEMY,ALVMUU'}
+  name: image_3
+  properties: {}
+  type: Image
 - layout_properties: {grid_position: 'KPBFZW,FCZFMR'}
   name: footer_1
   properties: {}

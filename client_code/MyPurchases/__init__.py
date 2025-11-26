@@ -41,7 +41,7 @@ class MyPurchases(MyPurchasesTemplate):
  
   def home_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.go_to_home()
+    self.navigate(go_to_home()
    
 
 
