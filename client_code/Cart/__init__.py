@@ -31,17 +31,7 @@ class Cart(CartTemplate):
     # Any code you write here will run before the form opens.
     self.total_label.text = f"${self.total:.02f}"
     
-    def add_purchase(): 
-      rows_to_add = []
-      for products in self.items:
-        rows_to_add.append({
-        'purchase_name': products['item_name'],
-        'quantity': self.item['quantity'],
-        'user_email': self.user['email'],
-        'total': products['item_price']
-    })
-
-      app_tables.purchases.add_rows(rows_to_add)
+   
 
 
 
@@ -50,18 +40,13 @@ class Cart(CartTemplate):
     get_open_form().Shop_link()
 
   def checkout_button_click(self, **event_args):
-    """This method is called when the button is clicked""" 
-    
-    
+    """This method is called when the button is clicked"""    
     for i in self.items:      
       self.order.append({'item_name':i['product']['item_name'], 'quantity':i['quantity']})
     
     try:     
       charge = stripe.checkout.charge(amount=self.total*100, currency="USD")
-      self.add_purchase
-    
-      
-
+           
     except:
 
      return

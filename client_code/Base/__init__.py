@@ -42,6 +42,24 @@ class Base(BaseTemplate):
     else:                       
       self.cart_items.append({'product': product, 'quantity': quantity})
 
+  def load_products(self, purchased_items):
+    anvil.server.call('get_purchased_items')
+    if purchased_items == None:
+      self.empty_purchase_panel.visible = True
+      self.purchase_panel.visible= False
+    else:   
+      self.repeating_panel_1.items= self.items
+
+  def add_purchase(self, product):
+    user = anvil.users.get_user()
+    if user in orders:
+      for products in self.cart_items:
+        rows_to_add.append({
+      'purchase_name': product['item_name'],
+      'quantity': product['item_quantity'],
+      'total': product['item_price']
+      })
+  app_tables.purchases.add_rows[rows_to_add]
 
  
       

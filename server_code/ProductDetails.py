@@ -23,8 +23,7 @@ def get_all_products():
 
 @anvil.server.callable
 def add_purchase(item):
-  rows_to_add = []
-  for item in self.items:
+   if app_tab
     rows_to_add.append({
       'purchase_name': item['item_name'],
       'quantity': item['item_quantity'],
