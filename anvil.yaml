@@ -40,7 +40,7 @@ db_schema:
     - admin_ui: {width: 200}
       name: total
       type: number
-    - {admin_ui: null, name: email, target: users, type: link_single}
+    - {name: user_link, target: users, type: link_single}
     - admin_ui: {width: 200}
       name: quantity
       type: number

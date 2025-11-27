@@ -29,15 +29,14 @@ class MyPurchases(MyPurchasesTemplate):
 
 
   def load_products(self,items):
-    self.items = anvil.server.call('get_orders')
-    anvil.users.get_user()
-    if user:
-      
-      
+    user = anvil.users.get_user()
+    self.items = anvil.server.call('get_user_purchases_linked')
     if not self.items:
-       self.empty_purchase_panel.visible = True
-       self.purchase_panel.visible= False
-    self.repeating_panel_1.items= self.items
+      self.empty_purchase_panel.visible = True
+      self.purchase_panel.visible= False
+
+    else:    
+      self.repeating_panel_1.items= self.items
 
   def shop_click(self, **event_args):
     """This method is called when the button is clicked"""

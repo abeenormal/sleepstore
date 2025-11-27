@@ -54,13 +54,28 @@ def add_to_purchases(cart_items):
   # Add all line item rows to the 'purchases' table  
   item = app_tables.purchases.add_rows(rows_to_add)
 
+  
+@anvil.server.callable
+def get_user_purchases_linked():
+  user = anvil.users.get_user()
+  user_link = user
+  if user:
+    # Assuming the 'purchases' table has a column called 'user_link'
+    # that links to the 'Users' table.
+    return app_tables.purchases.search(user_link=user)
+  else:
+    return []
 
 
 @anvil.server.callable
-def get_orders():
-  user = anvil.users.get_user()
-  for email in app.tables.puchases:
-  return app_tables.purchases.search()
+def get_orders():  
+    user = anvil.users.get_user()
+    if not user:
+      return []
+    else:
+     return app_tables.purchases.search()
+
+  
 
 
 
