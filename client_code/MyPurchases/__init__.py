@@ -30,6 +30,10 @@ class MyPurchases(MyPurchasesTemplate):
 
   def load_products(self,items):
     self.items = anvil.server.call('get_orders')
+    anvil.users.get_user()
+    if user:
+      
+      
     if not self.items:
        self.empty_purchase_panel.visible = True
        self.purchase_panel.visible= False

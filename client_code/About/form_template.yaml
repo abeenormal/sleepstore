@@ -15,7 +15,7 @@ components:
     type: Label
   - layout_properties: {grid_position: 'PHTEOQ,APKQST'}
     name: image_2
-    properties: {display_mode: zoom_to_fill, source: _/theme/lady_cpap.png}
+    properties: {alt_text: lady sleeping with a cpap device, display_mode: zoom_to_fill, source: _/theme/lady_cpap.png}
     type: Image
   - components: []
     data_bindings: []
@@ -39,15 +39,29 @@ components:
     name: label_2
     properties: {align: center, bold: true, font_size: 20, foreground: 'theme:Primary', text: Check out these Resouces for Healthy Sleep!}
     type: Label
-  - event_bindings: {click: link_1_click}
+  - components:
+    - layout_properties: {grid_position: 'DJWADG,VXLFZW'}
+      name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+    - data_bindings: []
+      layout_properties: {grid_position: 'DUZLUL,HPIWFL'}
+      name: image_5
+      properties: {alt_text: 'bedside table with soft candle, a book, and an alarm clock', background: 'theme:Primary', border: 4px  solid, border_radius: '30', height: '200', source: _/theme/before_bed.png, vertical_align: center}
+      type: Image
+    event_bindings: {click: link_1_click}
     layout_properties: {grid_position: 'SCJJUZ,TDDQZG'}
     name: link_1
     properties: {align: center, bold: true, font_size: 20, italic: true, text: Healthy Sleep Habits, url: 'https://www.nhlbi.nih.gov/health/sleep-deprivation/healthy-sleep-habits'}
     type: Link
   - components:
+    - layout_properties: {grid_position: 'VJHLQO,XRPXNK'}
+      name: spacer_2
+      properties: {height: 36}
+      type: Spacer
     - layout_properties: {grid_position: 'CGVOVK,FJTXZC'}
       name: image_3
-      properties: {source: _/theme/snoring.png}
+      properties: {alt_text: woman covering her ears to stop the sound of her husband snoring, background: 'theme:Primary', border: 4px solid, border_radius: '30', source: _/theme/snoring.png, vertical_align: bottom}
       type: Image
     data_bindings: []
     event_bindings: {click: link_2_click}
@@ -55,18 +69,23 @@ components:
     name: link_2
     properties: {align: center, bold: true, font_size: 20, italic: true, text: Sleep Apnea Signs and Symptons, url: 'https://www.mayoclinic.org/diseases-conditions/sleep-apnea/symptoms-causes/syc-20377631'}
     type: Link
-  - event_bindings: {click: link_3_click}
-    layout_properties: {grid_position: 'SCJJUZ,RYXDOI PCJQMM,FBNNCL'}
+  - components:
+    - layout_properties: {grid_position: 'XWWWHK,CNQRXU'}
+      name: spacer_3
+      properties: {height: 47}
+      type: Spacer
+    - layout_properties: {grid_position: 'EKBTEL,JYDRAL'}
+      name: image_4
+      properties: {alt_text: lady asleep using a cpap device, background: 'theme:Primary', border: 4px solid, border_radius: '30', height: '200', source: _/theme/lady_cpap.png, vertical_align: center}
+      type: Image
+    event_bindings: {click: link_3_click}
+    layout_properties: {grid_position: 'SCJJUZ,RYXDOI'}
     name: link_3
     properties: {align: center, bold: true, font_size: 18, foreground: 'theme:Primary', italic: true, text: How CPAP Machines Work, url: 'https://my.clevelandclinic.org/health/treatments/22043-cpap-machine'}
     type: Link
-  - layout_properties: {grid_position: 'SCJJUZ,RYXDOI DLRCKO,VCTYYB'}
-    name: image_4
-    properties: {height: 228, source: _/theme/lady_cpap.png}
-    type: Image
   layout_properties: {grid_position: 'AKDTWI,QJEDZG'}
   name: column_panel_2
-  properties: {}
+  properties: {background: 'theme:Secondary Container', border: 5pt solid primary, foreground: 'theme:Primary'}
   type: ColumnPanel
 - layout_properties: {grid_position: 'KPBFZW,FCZFMR'}
   name: footer_1
@@ -74,6 +93,6 @@ components:
   type: form:Footer
 container:
   data_bindings: []
-  properties: {background: ''}
+  properties: {background: '', foreground: 'theme:On Primary'}
   type: ColumnPanel
 is_package: true

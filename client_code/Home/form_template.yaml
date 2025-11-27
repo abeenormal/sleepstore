@@ -1,8 +1,8 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'LAFUUQ,QXOAWH', row_background: 'theme:Primary Container'}
+  - layout_properties: {grid_position: 'LAFUUQ,QXOAWH', row_background: ''}
     name: image
-    properties: {background: 'theme:Primary', display_mode: zoom_to_fill, height: 451.3999938964844, source: _/theme/SleepSound.png}
+    properties: {alt_text: Title text SleepSound Medical Supplies with woman sleeping comfortably, background: 'theme:Primary', display_mode: zoom_to_fill, height: 451.3999938964844, source: _/theme/SleepSound.png}
     type: Image
   - components:
     - event_bindings: {click: button_click}
@@ -10,9 +10,33 @@ components:
       properties: {background: 'theme:Primary', bold: true, font_size: 22, foreground: '', italic: true, role: filled-button, text: Check out our products!}
       type: Button
     - components:
+      - layout_properties: {grid_position: 'ERHPET,PWKQXN'}
+        name: label_1
+        properties: {align: center, bold: true, font_size: 20, text: 5 Star Reviews!}
+        type: Label
+      - layout_properties: {grid_position: 'YYBXKV,QWVQDR'}
+        name: label_2
+        properties: {align: center, font_size: 20, icon: 'fa:star'}
+        type: Label
+      - layout_properties: {grid_position: 'YYBXKV,HLOYEU'}
+        name: label_3
+        properties: {align: center, icon: 'fa:star'}
+        type: Label
+      - layout_properties: {grid_position: 'YYBXKV,YRDCXT'}
+        name: label_4
+        properties: {align: center, icon: 'fa:star'}
+        type: Label
+      - layout_properties: {grid_position: 'YYBXKV,ABKYUW'}
+        name: label_5
+        properties: {align: center, icon: 'fa:star'}
+        type: Label
+      - layout_properties: {grid_position: 'YYBXKV,ABQSOX'}
+        name: label_6
+        properties: {align: center, icon: 'fa:star'}
+        type: Label
       - layout_properties: {grid_position: 'XPYCSA,OVWUJC'}
         name: image_2
-        properties: {display_mode: zoom_to_fill, height: 440.79998779296875, source: _/theme/lady_cpap.png}
+        properties: {alt_text: woman asleep using a cpap device, display_mode: zoom_to_fill, height: 440.79998779296875, source: _/theme/lady_cpap.png}
         type: Image
       - components: []
         data_bindings: []
@@ -30,7 +54,7 @@ components:
       name: content_panel2
       properties: {role: elevated-card}
       type: ColumnPanel
-    layout_properties: {full_width_row: false, grid_position: 'ODONOJ,VLPJJH'}
+    layout_properties: {full_width_row: true, grid_position: 'ODONOJ,VLPJJH'}
     name: description
     properties:
       align: center
@@ -45,9 +69,9 @@ components:
       spacing:
         margin: ['0', null, '0', null]
     type: RichText
-  layout_properties: {grid_position: 'VVNQYV,UVYRHY'}
+  layout_properties: {full_width_row: false, grid_position: 'VVNQYV,UVYRHY'}
   name: content_panel
-  properties: {role: elevated-card}
+  properties: {background: '', role: elevated-card}
   type: ColumnPanel
 - components:
   - data_bindings:

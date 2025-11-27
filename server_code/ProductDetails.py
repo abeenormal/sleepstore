@@ -58,6 +58,8 @@ def add_to_purchases(cart_items):
 
 @anvil.server.callable
 def get_orders():
+  user = anvil.users.get_user()
+  for email in app.tables.puchases:
   return app_tables.purchases.search()
 
 
